@@ -1,0 +1,323 @@
+.box{
+	width: 1000px;
+	margin:100px auto;
+}
+.header{
+	width: 100%;
+	height: 100px;
+}
+#headerleft {
+    width: 227px;
+	height: 63px;
+    float: left;
+}
+#headerleft img{
+	padding-left: 7px;
+}
+#headerright {
+   width: 408px;
+	height: 61px;
+	float: right;
+}
+#headerright h4{
+	font-family: "宋体";
+	margin: 2px;
+	padding: 5px;
+}
+#headerright h5{
+	font-family: "宋体";
+	font-size: 14px;
+	margin: 4px;
+	color: #828282;
+	padding: 1px;
+}
+#headerbottom {
+	width: 999px;
+	height: 30px;
+    clear: both;
+    background-image: url(../img/navbg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+	display: inline-block;
+	margin-top: 11px;   
+}
+#headerbottom>ul{
+	margin-top:3px;	
+}
+#headerbottom>ul>li{
+	display: inline-block;
+	margin-right: 52px;
+	cursor: pointer;
+}
+#leftmargin{
+	background-image: url(../img/home.gif);
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 28px;
+	text-align: center;
+	line-height: 25px;	
+}
+#rightmargin{
+	margin-left: 55px;
+	color: white;
+}
+#rightmargin:before{
+	content:url(../img/arrow_r.gif);
+}
+/*头部完成*/
+.main{
+	width:100%;
+	overflow: hidden;
+}
+.mainleft{
+	width:60%;
+	display: inline-block;
+	vertical-align: top;	
+}
+
+.mainleft-top{
+	width: 102%;
+	height: 300px;
+}
+#one {
+    width: 610px;
+    height: 205px;
+    margin-top: 18px;
+    height: 204px;
+    text-align: center;
+}    
+#one img {
+    width: 600px;
+    height: 200px;
+} 
+#two {
+    width: 611px;
+    border-bottom: 1px solid #CCE6F5;
+}     
+#two h2 {
+    margin: 0;
+    padding: 8px;
+    font-size: 26px;
+    color: #266392;
+}   
+#two a {
+    float: right;
+    vertical-align: top;
+    margin-top: -38px;
+    font-size: 23px;
+    padding-right: 10px;
+    text-decoration: none;
+} 
+.mainleft-bottom {
+    width: 100%;
+    height: 489px;
+    font-family:"宋体";
+    margin-top: -30px;
+ }   
+#mainleft-b-l{
+	width: 389px;
+	clear: both;
+	display: inline-block;
+	margin-top: 32px;
+} 	
+#mainleft-b-l ul{
+	list-style: none;
+	margin-top: -9px;	
+}	
+#mainleft-b-l ul li{
+	margin-left: -28px;
+	position: relative;
+}	
+
+#mainleft-b-l a{
+	font-size: 20px;
+	color: #2663AD;
+}	
+#mainleft-b-l span{
+	font-size: 14px;
+	color: #828282;
+}
+#mainleft-b-l p{
+	font-size: 16px;
+}
+
+#logoone,#logotwo,#logothree,#logofour,#logofive,#logosix{
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	display: inline-block;
+	position: absolute;
+	text-align: center;
+}
+#writing {
+   	height: 75px;
+	width: 313px;
+	display: inline-block;
+	margin-left: 49px;
+	margin-top: -10px;
+}
+/*主体左边底部的左边完成*/
+#mainright-b-r {
+    width: 200px;
+    float: right;
+    display: inline-block;
+    margin-top: -15px;
+    height: 449px;
+}
+#mainright-b-r ul{
+	list-style: none;
+}
+#mainright-b-r li{
+	margin-top: 18px;
+	float: right;
+	margin-right: 18px;
+	margin-bottom: 35px;
+}
+#mainright-b-r li:before{
+	content: url(../img/downicon.gif); 
+}
+/*主体左边完成*/
+.mainright {
+    width: 36%;
+    display: inline-block;
+    vertical-align: top;
+    height: 769px;
+    margin-left: 26px;
+}
+.mainright-header{
+	height: 264px;
+}
+.mainright-header h2{
+	padding-left: 12px;
+}
+.father{
+    height: 193px;
+    border-top: 1px solid #CCE6F5;
+    margin-top: -15px;
+}
+#childone{
+	height:158px;
+	padding-top: 14px;
+}
+#childone ul{
+	margin: 0px;
+	padding-left: 15px;
+
+}
+#childone ul li{
+	font-family: "宋体";
+	color: #266392;
+}
+#childtwo{
+	height: 47px;
+	color: #266392;
+}
+#childtwo h3{
+	display: inline-block;
+	margin-top: 5px;
+	font-size: 21px;
+}
+#childtwo a{
+	float: right;
+	margin-top: 5px;
+	font-size: 19px;
+	text-decoration: none;	
+}
+.mainright-middle{
+	height: 274px;
+	border-top: 1px solid #CCE6F5;
+}
+.middle-left{
+	width: 157px;
+	height: 271px;
+	display: inline-block;
+}
+#picture{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	text-align: center;
+}
+#gamename{
+	display: inline-block;
+	vertical-align: top;
+	color: #266392;
+}
+.middle-left ul{
+	list-style: none;
+	margin-left: -32px;
+	
+}
+.middle-left li{
+	margin-bottom: 20px;
+}
+.middle-right{
+    width: 92px;
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+	height: 271px;
+}
+.middle-right ul{
+	list-style: none;
+}
+.middle-right li{
+	margin-bottom: 21px;
+}
+.middle-right li:before{
+	content: url(../img/downicon.gif);	
+}	
+/*主体右边的中部完成*/	
+
+.mainright-bottom h2{
+	margin-top: -10px;
+	padding-left: 8px;
+	color: #266392;	
+}	
+	
+#composition{
+	height: 182px;
+	width: 398px;
+	border-top: 1px solid #DAEDF8;
+	font-size: 16px;
+	color: #266392;
+	font-family: "宋体";
+	margin-top: -17px;
+}	
+#composition ul{
+	list-style: none;
+	display: inline-block;
+	margin-left: -30px;
+	padding-top: 11px;
+
+}	
+#composition li{
+	padding-bottom: 18px;
+}
+/*主体完成*/	
+.bottom{
+	background: #F8F8F8;
+	margin-top: -30px;
+	color: #B9CCDB;
+}	
+.bottom p{
+	text-align: center;
+	font-family: "宋体";
+	padding: 0;
+}			
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,44 @@
+.box{
+	width:450px;
+	height: 150px;
+	margin: 350px auto;
+	text-align: center;
+	background: #F7F0F0;
+}
+.box p{
+	font-size: 22px;
+	font-weight: bolder;
+	font-family: "宋体";
+	color: #6464e4;
+	margin-top: 14px;
+}
+.mian{
+	text-align: center;
+	margin-top: -8px;
+}
+input[type^="text"]{
+	display: inline-block;
+	width: 303px;
+	height: 38px;
+	padding-left: 9px;
+	border: 2px solid blue;
+}
+input[type^="button"]{
+	display: inline-block;
+	height: 44px;
+	width: 68px;
+	border: none;
+	background: #5454f5;
+	color: white;
+	cursor: pointer;
+}
+#bottom{
+	width: 327px;
+	height: 28px;
+	margin-top:6px;
+	margin-left: 58px;
+	line-height: 28px;
+	text-align: center;
+	font-family: "宋体";
+	color: blue;
+}

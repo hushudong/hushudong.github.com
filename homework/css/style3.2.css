@@ -1,0 +1,137 @@
+.box{
+	width: 850px;
+	margin: 150px auto;
+}
+#img1 {
+    width: 171px;
+    height: 50px;
+    text-align: center;
+    margin-left: 61px;
+    margin-top: 18px;
+    border: none;
+}
+#mainleft{
+    width: 382px;
+    height: 356px;
+    margin-left: 27px;
+    display: inline-block;
+}
+#mianright {
+    height: 353px;
+    width: 340px;
+    display: inline-block;
+    margin-left: 41px;
+}
+.bottom {
+    width: 849px;
+    height: 119px;
+    border-top: 1px dashed gray;
+    text-align: center;
+}    
+#title {
+    font-size: 20px;
+    font-weight: bolder;
+    padding-left: 20px;
+}
+#user {
+    text-align: center;
+    float: right;
+}
+input[type^="textone"]{
+    width: 240px;
+    height: 18px;
+}
+
+
+input[type^="password"]{
+    width: 240px;
+    height: 18px;
+	
+}
+#verification {
+    width: 69px;
+    height: 42px;
+    display: inline-block;
+    line-height: 42px;
+    text-align: right;
+    position: relative;
+}
+
+input[type^="texttwo"] {
+    height: 19px;
+    width: 46px;
+    margin-top: 8px;
+    position: absolute;
+}  
+#img2 {
+    text-align: center;  
+    margin-top: 7px;
+    margin-left: 54px;
+    border: none;
+} 
+#span{
+    color: #999999;
+}
+
+input[type^="buttonone"] {
+    width: 84px;
+    text-align: center;
+    height: 27px;
+    background: #F08300;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 70px;
+}
+#wordone{
+    text-decoration: none;
+    font-size: 15px;
+    padding-left: 12px;
+}
+
+     
+#wordtwo{
+    font-family: "宋体";
+    padding-left: 19px;
+    text-align: center;
+}
+    
+
+
+input[type^="buttontwo"] {
+    width: 38px;
+    height: 28px;
+    text-align: center;
+}
+
+#wordthree{
+    text-align: center;
+    border-top: 1px dashed gray;
+}
+#ul {
+    height: 46px;
+    text-align: center;
+
+ }   
+#logoone {
+    list-style-image: url(img/4.png);
+    height: 33px;
+    width: 65px;
+    display: inline-block;
+ }   
+#logotwo{
+   display: inline-block;
+}
+#href {
+    font-size: 15px;
+    font-family: "宋体";
+ }   
+#size {
+    font-family: "宋体";
+    font-size: 10px;
+} 
+#one {
+    text-decoration: none;
+    border-right: 1px solid gray;
+    padding-right: 7px;
+} 

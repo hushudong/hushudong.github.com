@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin:0;
+		}
+		.box{
+			width: 1000px;
+			margin:100px auto;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin:0;
+
+		}
+		.header{
+			height:100px;
+			width:100%;
+			background-color: #B7D1ED;
+		}
+		.title{
+			height: 100px;
+			text-align: center;
+			line-height: 100px;
+		}
+		.main{
+			width: 1000px;
+			height: 800px;
+		}
+		.mainleft{
+			width: 50%;
+			height: 800px;
+			float: left;
+			text-align: center;
+			background-color: #DBF27E;
+
+		}
+		 #left{
+			display: block;
+			line-height: 58px;
+			text-indent: 27px;
+			padding: 21px;
+			font-family: "宋体";
+			color: #FF895D;
+		}
+		.mainright{
+			width:50%;
+			height: 800px;
+			float: left;
+			text-align: center;
+			background-color: #408EF5;
+		}
+		#right{
+			display: block;
+			line-height: 58px;
+			text-indent: 30px;
+			padding-top: 38px;
+			font-family: "宋体";
+			color: #FF895D;
+		}
+		.bottom{
+			height:100px;
+			width:100%;
+			background-color: #B7D1ED;
+		}
+		
+
+	</style>
+
+</head>
+<body>
+	<div class="box">
+		<div class="header">
+			<div class="title">
+				<h1>今日所学总结</h1>
+			</div>
+		</div>
+	
+		<div class="main">
+			<div class="mainleft">
+				<h1>上午所学的</h1>
+				<ul>
+					<li id="left">一.先是回顾呢昨天的知识点，总结呢var申明变量是会提前的，但赋值会提前的；
+					外部变量和内部变量相同的时候，会优先取内部变量；全局变量覆盖广，局部变量作用率相对较窄；
+					;</li>
+					<li id="left">二.;学习呢数组，例如var list=[1,2,3,4,5],中间要用逗号隔开，默认的是从左手边开始取数;
+					</li>
+					<li id="left">三.arguments.length,这里用点的符号隔开;</li>
+					<li id="left"> 四.return返还的值应是参数中最后一个得出的值;
+						
+					</li>
+				</ul>
+			</div>
+			<div class="mainright">
+					<h1>下午所学的</h1>
+					<ul>
+						<li id="right">一.学呢函数类型中的递归函数，性质是函数内部的调用;</li>
+						<li id="right">二.学呢vey key=prompt输入型的函数和匿名函数;例如vey key=prompt("请选择你要进行的操作\n1.登录\n2.注册\n3.退出")，在js中\n是换行符;
+						在匿名函数中，此时若是申明呢一个变量，没赋值的话，它为一个undefined，故不能在前面调用函数;
+						</li>
+						<li id="right">三.然后学呢object类型，一种是使用new运算符，另一种是字面量；new可以为对象声明变量，添加
+						属性，句型为var goods=new Object;而字面量形式下不会调用object中的构造函数;()
+						<li id="right">四.注意构造函数的对象名称一般要大写字母开头,且左边的一般是this加属性名称，不能变化的;右边的是引入参数，是可变化的.</li>
+					</ul>
+			</div>
+		</div>
+		<div class="bottom">
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			#box{
+				width: 610px;
+				height: 321px;
+				margin: 150px auto;
+				border: 1px solid red;
+				background: url(img/3.jpg) no-repeat;
+				background-size:cover; 
+				position: relative;
+				text-align: center;
+				line-height: 350px;
+				
+			}
+			#leftlogo{
+				position: absolute;
+				width: 70px;
+				height: 70px;
+				border: 1px solid blue;
+				top: 131px;
+    			left: 3px;
+    			background: url(img/16.png) no-repeat center;	
+    			
+			}
+			#rightlogo{
+				position: absolute;
+				border: 1px solid blue;
+				width: 70px;
+				height: 70px;
+				top: 131px;
+   				right: 3px;
+   				background: url(img/17.png) no-repeat center;
+			}
+			#logo1{
+				margin-top: 42px;
+			}
+		</style>
+		
+		<title></title>
+	</head>
+	<body>
+		<div id="box" onmouseover="getOver()" onmouseout="getOut()">
+			<button id="leftlogo" onclick="radioLeft()">
+				
+			</button>			
+			<button id="rightlogo" onclick="radioRight()">
+			
+			</button>		
+			<img  id="logo1" src="img/ img11.jpg"/>
+		</div>
+		
+		<script type="text/javascript">
+			var imagelist="img/img11.jpg,img/img1.jpg,img/img2.jpg,img/img3.jpg,img/img4.jpg,img/img5.jpg";
+			var flag=imagelist.split(",");
+			var index=0;
+				function radioLeft(){
+				
+				}
+				function radioRight(){
+					
+				}
+
+		</script>
+		
+	</body>
+</html>

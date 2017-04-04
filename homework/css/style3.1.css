@@ -1,0 +1,82 @@
+#box{
+	width: 600px;
+	height: 484px;
+	margin: 100px auto;
+}
+#top{
+	width: 100%;
+	height: 80px;
+}
+#top img {
+    margin-left: 95px;
+    margin-top: 15px;
+    border: none;
+}
+#bottom {
+    width: 431px;
+    height: 400px;
+    float: right;
+}
+h2 {
+    font-size: 21px;
+    font-family: "微软雅黑";
+}
+h3{
+	font-size: 21px;
+    font-family: "微软雅黑";
+    margin-top: 20px;
+}
+ul{
+	margin-left: -53px;
+}
+li {
+    display: inline-block;
+    width: 204px;
+    height: 50px;
+    text-align: right;
+    line-height: 50px;
+    position: relative;
+    margin-top: 10px;
+}
+#dingwei {
+    width: 50px;
+    height: 49px;
+    position: absolute;
+    left: 11px;
+    background-image: url(../img/9.png);
+}
+p {
+    color: gainsboro;
+    font-family: "宋体";
+    font-size: 15px;
+}
+input[type^="button"]{
+    width: 66px;
+    height: 31px;
+    border: 1px solid #C1C1C1;
+    border-radius: 3px;
+    background: #FAFAFA;
+    cursor: pointer;
+}
+input[type^="button"]:hover{
+	background: salmon;
+	color: white;
+}
+#libi {
+    padding-bottom: 14px;
+    border-bottom: 1px dashed gainsboro;
+    width: 418px;
+}
+a{
+	text-decoration: none;
+	color: #0066CC;
+	font-family: "微软雅黑";
+}
+a:hover{
+	text-decoration:underline;
+	color: red;
+}
+
+
+
+
