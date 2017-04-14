@@ -1,0 +1,126 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	
+}
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.box{
+	width: 1295px;
+	margin: 100px auto;
+	border: 1px solid darkred;
+}
+.header{
+	width: 645px;
+	height: 73px;
+	margin: auto;
+	border: 1px solid indigo;
+		
+}
+.headerleft{
+	width: 151px;
+	height: 72px;
+	font-size: 21px;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;		
+}
+.headerleft p{
+	display: inline-block;
+	position: absolute;
+	height: 46px;
+	width: 151px;
+	top: -8px;
+	left: 0;
+	text-align: center;
+	line-height: 46px;
+	cursor: pointer;
+	background-color: #FAA01C;
+}
+.headerleft p:hover{
+	background: #FF9701;
+}
+.headerleft p:hover .father{
+	color: white;
+}
+.headerleft p:hover .child{
+	color:red;
+}
+.headerright{
+	width: 478px;
+	height: 72px;
+	display: inline-block;
+	font-size: 12px;
+	float: right;
+}
+.headerright li{
+	display: inline-block;
+	width: 54px;
+	margin-left: 11px;
+	position: relative;
+}
+.headerright a{
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	width: 65px;
+	height: 55px;
+	text-align: center;
+	line-height: 68px;
+	cursor: pointer;
+	margin-left: -10px;
+}
+.headerright a:hover{
+	color: white;
+	background: #FF9701;
+}
+#display{
+	background-color:#FAA01C;
+	display: inline-block;
+	width: 65px;
+	width: 65px;
+	position: absolute;
+	margin-left: -10px;
+	display: none;
+}
+#display li{
+	display: inline-block;
+	left: -11px;
+	text-align:center;
+	cursor:pointer;
+	width: 65px;
+}
+#display li:hover{
+	color: white;
+	background: #FF9701;
+}
+.headerright li:hover #display{
+	display:block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

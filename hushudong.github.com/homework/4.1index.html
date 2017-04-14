@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			img{
+				margin-top: 20px;
+				position: relative;
+				margin-right: 20px;
+				border:2px solid #fff;
+			}
+			.choose{
+				border:2px solid greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="Over()">点击图片</button>
+		<button onclick="Remove()">删除图片</button>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var content=document.getElementById("box");
+			var arr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/8.jpg","img/9.jpg","img/10.jpg"]
+			var index=0;
+			//下面为点击图片
+			function Over(){
+				for(var i=index;i<arr.length;i++){
+					var img=document.createElement("img");
+					img.setAttribute("src",arr[i]);
+					img.setAttribute("width","300px");
+					img.setAttribute("height","250px");
+					img.onclick=function(){
+						img.setAttribute("class","choose");
+					}
+					box.appendChild(img);
+					return ++index;
+				}
+				if(index==arr.length){
+					index=0;
+				}
+	
+			}
+			
+			//下面为删除图片
+			function Remove(){
+				var choose=document.getElementsByClassName("choose");
+				while(choose.length-1>=0){
+					choose[0].remove();
+				}
+				
+			}
+		</script>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--
+	img{
+				margin-top: 20px;
+				position: relative;
+				margin-right: 20px;
+				border:2px solid #fff;
+			}
+			.choose{
+				border:2px solid #333;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="foo()">点我添加图片<tton>
+		<button onclick="Delete()">删除<tton>
+		<div id="container"></div>
+		<script>
+			var container = document.getElementById("container");
+			var arr = ["../img/1.jpg","../img/2.jpg","../img/3.jpg","../img/4.jpg","../img/6.jpg"];
+			var index = 0
+			function foo(){
+				var img = document.createElement("img");
+				if(index == arr.length){
+					index = 0;
+				}
+				img.onclick = function(){
+					img.setAttribute("class","choose");
+				}
+				for(var i = index;i<arr.length;i++){	
+					img.setAttribute("src",arr[i]);
+					container.appendChild(img);
+					return ++index;
+				}
+			}
+			
+			function Delete(){
+				var choose = document.getElementsByClassName("choose");
+				console.log(choose);
+				while(choose.length-1>=0){
+					choose[0].remove();
+				}
+			}
+			
+		</script>
+
+
+-->
+
+
+
+
+
+
+
+
+
+

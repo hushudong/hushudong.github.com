@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		//构造用户函数
+		function User(name,account,password,balance){
+			this.name = name;
+			this.account = account;
+			this.password = password;
+			this.balance = balance;
+			this.input = function(){
+				return "name:" + this.name + ",account:" + this.account + ".paaword:" + this.password + ",balance:"+this.balance;
+			} 
+		}
+
+		//构造商品函数
+		function Goods(goodsName,price,type,stock){
+			this.goodsName = goodsName;
+			this.price = price;
+			this.type = type;
+			this.stock = stock;
+			this.input = function(){
+				return "goodsName:" + this.goodsName + ",price:" + this.price + ".type:" + this.type + ",stock:"+ this.stock;
+			} 
+		}
+
+		// 创建商品数据
+		var goods1 = new Goods("香蕉",2,"水果",20);
+		var goods2 = new Goods("鸭梨",4,"水果",10);
+		var goods3 = new Goods("牙刷",10,"生活用品",10);
+		var goods4 = new Goods("饼干",12,"零食",30);
+		var goods5 = new Goods("土豆",4,"蔬菜",15);
+
+		// 创建数据存放数组
+		var userList = new Array();//存放用户数据
+		var goodsList = new Array();//存放商品数据
+		
+
+		// 将我们定义的商品信息输入至数组中
+		goodsList.push(goods1,goods2,goods3,goods4,goods5);
+
+		// 用于之后记载数组下标
+		var index;
+
+		 // 用户登录界面
+		function home(){
+		 	var key = prompt("请选择您要执行的操作\n1.登录\n2.注册\n3.退出");
+		 	switch(key){
+		 		case "1":
+		 			login(); //登录界面
+		 		break;
+		 		case "2":
+		 			register(); //注册界面
+		 		break;
+		 		case "3":
+		 			return;    //退出当前界面
+		 		break;
+		 		default:
+		 			alert("您的输入有误！");
+		 	}
+		 	home();
+		}
+		
+
+		 // 用户登录界面
+		 function login(){
+		 	var  accountInput = prompt("请输入您的账号");
+		 	// 判断账号输入是否为空
+		 	if(accountInput == ""){
+		 		return alert("账号不能为空！");
+		 	}
+		 	// 判断输入的账号是否已经被注册
+		 	for(var i = 0;i < userList.length; i++){                          //循环，将我们输入的账号与数组中已存在的账号进行比较
+		 		if(accountInput == userList[i].account){                      //若有与输入账号匹配的数据，则表示账号已被注册，可以进行下一步
+		 			index = i;							                      //记录下标（登录账户在数组中的位置），以便后续信息的增删改查
+		 			var passwordInput = prompt("请输入您的密码");
+		 			if(passwordInput == "" || passwordInput != userList[i].password){
+		 				return alert("密码输入有误，请重新输入");
+		 			}
+		 			if(passwordInput == userList[i].password){				 //输入的密码与数组中与此账号匹配的的密码相等，则登录成功
+		 				alert("登录成功");
+		 				store();											 //跳转商城界面
+		 				return;
+		 			}
+		 			break;
+		 		}
+		 	}
+		 	alert("账户不存在，请先注册！");
+		 }
+
+		 // 用户注册界面
+		 function register(){
+		 	var account = prompt("请输入账号");
+		 	if(account == ""){
+		 		return alert("账号不能为空");
+		 	}	
+		 	for(var i=0; i<userList.length ;i++){							     //	循环，判断输入的账号是否已经注册过	
+		 		if(account == userList[i].account){
+		 			return alert("该账号已存在，请直接登录或重新注册！");
+		 		}
+		 	}
+		 	var password = prompt("请输入密码");
+		 	var password2 = prompt("请再次输入密码");
+		 	if(password !== password2){											
+		 		return alert("两次密码输入有误，请重新输入！");
+		 	}
+		 	var name = prompt("请输入您的姓名");
+		 	if(name == ""){
+		 		return alert("姓名不能为空！");
+		 	}
+		 	var balance = prompt("如您需充值，请输入充值金额，如无需则跳过")-0;    //“-0”是为了将string类型转换为number类型
+		 	if(balance <0 || isNaN(balance)){									   //判断商品购买数量是否小于0以及输入是否为非数值
+		 		return alert("您的金额输入有误，请重新输入");
+		 	}
+		 	var user = new User(name,account,password,balance);						
+		 	userList.push(user);												  //将此次注册的信息加入到我们上面创建的userList数组末尾
+		 	alert("恭喜您，注册成功！");
+		 }
+
+
+
+		 // 商城主界面
+		function store(){
+		  	var  key = prompt("请输入您需要执行的操作：\n1.购买商品\n2.添加商品\n3.商品下架\n4.个人中心\n5.退出魔形商城");
+		  	switch(key){
+		  		case "1":
+		  			buy();		//购买商品
+		  		break;
+		  		case "2":
+		  			add();       //添加商品
+		  		break;
+		  		case "3":
+		  			remove();    //商品下架
+		  		break;
+		  		case "4":
+		  			person();    //个人中心
+		  		break;
+		  		case "5":
+		  			return;
+		  		break;
+		  		default:
+		  			alert("您的输入有误");
+		  	}
+		  	store();
+		}
+
+		//购买商品界面
+		function buy(){
+			var str = ""; 
+       		for (var i = 0; i <goodsList.length; i++) {									
+            	str +=	goodsList[i].input()+"\n";
+      		}
+        	alert(str);  											 //创建空字符串，循环数组中的每一个数据，通过alert展示在弹框中
+        	var goodsNameInput = prompt("请输入您要购买的商品名称");
+        	if(goodsNameInput == ""){
+        		return alert("商品名称不能为空，请重新输入");
+        	}
+        	for(var i=0; i<goodsList.length; i++){
+        		if(goodsNameInput == goodsList[i].goodsName){
+        			var stockInput = prompt("请输入您要购买的数量")-0;
+
+        			if(stockInput > goodsList[i].stock ){				 //判断商品购买数量是否大于商品的库存
+        				return alert("商品数量不足，请重新输入！");
+        			}
+        			if(stockInput <= 0 || isNaN(stockInput)){            //判断商品购买数量是否小于等于0以及输入是否为非数值
+        				return alert("您的输入有误，请重新输入！");
+        			}
+        			var total = stockInput*(goodsList[i].price-0);     	 //购买商品总价（商品数量*商品单价）
+        			if(total >userList[index].balance){					 //判断商品总价是否大于用户余额，若大于则弹框提示
+        				return alert("您的余额不足，请充值");
+        			}
+        			goodsList[i].stock -= stockInput;					 //此处计算商品库存（原库存减去已购买的商品数量）
+        			userList[index].balance -=total;						
+        			return alert("购买成功！");							 //此处计算用户余额（原余额减去已购买的商品总价格）
+        		}
+        	}     
+        	return alert("商品不存在，请重新输入！");
+		}
+
+
+		// 添加商品界面
+		 function add(){
+		 	var goodsName = prompt("请输入商品名称");
+		 	if(goodsName == ""){
+		 		return alert("商品名称不能为空");
+		 	}
+		 	for(var i=0; i<goodsList.length ;i++){						 //通过循环判断商品信息是否已经存在在商品信息数组中
+		 		if(goodsName == goodsList[i].goodsName){
+		 			return alert("该商品已上架，请重新输入！");
+		 		}
+		 	}
+		 	var price = prompt("请输入商品价格")-0;
+		 	if(price <= 0 || price == "" || isNaN(price)){				 //判断商品价格的输入是否小于或者等于0以及输入是否为非数值，若是，则弹窗提示输入有误
+		 		return alert("价格输入有误，请重新输入");
+		 	}
+		 	var type = prompt("请输入商品种类");
+		 	if(type == ""){
+		 		return alert("商品种类不能为空");
+		 	}
+		 	var stock = prompt("请输入商品库存")-0;							
+		 	if(stock <= 0 || stock == "" || isNaN(stock)){				 //判断商品库存的输入是否小于或者等于0以及输入是否为非数值，若是，则弹窗提示输入有误
+		 		return alert("库存输入有误，请重新输入");
+		 	}
+		 	var goods = new Goods(goodsName,price,type,stock);				
+		 	goodsList.push(goods);										 //将此次添加的商品信息加入到我们上面创建的商品信息数组末尾
+		 	alert("恭喜您，商品添加成功！");
+		 }
+
+		 //商品下架
+		 function remove(){
+		 	var goodsName = prompt("请输入您需要下架的商品名称");
+		 	if(goodsName == ""){
+		 		return alert("商品名称不能为空");
+		 	}
+		 	for(var i=0; i<goodsList.length ;i++){						 //判断输入的商品名称是否存在
+		 		if(goodsName == goodsList[i].goodsName){
+		 			goodsList.splice(i,1);								 //删除该商品，“i”为该商品在数组中的位置，“1”表示删除一个数据，即该商品信息
+		 			return alert("商品下架成功！");
+		 		}
+		 	}
+		 	return alert("商品不存在，请重新输入");
+		 }
+
+		//个人中心界面
+		function person(){
+		  	var key = prompt("请输入您需要执行的操作：\n1.查看您的信息\n2.查看您的余额\n3.充值\n4.退出");
+		  	switch(key){
+		  		case "1":
+		  			alert(userList[index].input());                   //查看用户信息
+		  		break;
+		  		case "2":
+		  			alert("您的余额为："+userList[index].balance);    //查看用户余额
+		  		break;
+		  		case "3":
+					charge();                                         //充值 
+		  		break;
+		  		case "4":
+		  			return;
+		  		break;
+		  		default:
+		  			alert("您的输入有误！");
+		  	}
+		  	person();
+		}
+
+
+
+		// 充值
+		function charge(){
+			var chargeInput = prompt("请输入您要充值的金额")-0;
+			if(chargeInput <= 0 || isNaN(chargeInput)){        //判断充值的数量是否小于等于0以及输入是否为非数值，若是，则弹框提示输入有误
+				return alert("您的输入有误，充值失败");
+			}
+			alert("充值成功");
+			userList[index].balance += chargeInput; 			//用户余额=原用户余额+充值数量
+		}
+		//启动该程序
+		home();   
+	</script>
+
+</body>
+</html>

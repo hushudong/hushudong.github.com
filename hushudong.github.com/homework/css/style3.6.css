@@ -1,0 +1,72 @@
+
+.box{
+	width:1300px;
+	margin:100px auto;
+	height:266px;
+}
+.box>#ul{
+	width: 100%;
+	list-style:none;
+}
+.box>#ul>li{
+	float:left;
+	margin-left: -50px;
+}
+.box a{
+	text-decoration:none;
+	margin-right:78px;
+	color: black;
+	display: block;
+	height: 35px;
+	width: 40px;
+	text-align: center;
+	line-height: 35px;
+	width: 90px;
+	font-size: 18px;
+}
+#text{
+	background: #FF0000;
+	color: white;
+	border-radius: 5px;
+}
+.box a:hover{
+	background: #FF0000;
+	color: white;
+	border-radius: 5px;
+}
+#table{
+	list-style:none;
+	width: 82px;
+	display: none;
+	padding-left: 19px;
+	background:#E8E0E0;
+	margin-top: 16px;
+	cursor: pointer;
+}
+#table:hover{
+	background: white;
+}
+
+#table li{
+	margin-left: -26px;
+	margin-top: 6px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+
+}
+ #ul li:hover #table{
+	display: block;
+
+}
+
+ #table li:hover{
+ 	background: #ED5027;
+ 	border-radius: 5px;
+
+ }
+
+
+
+
+
