@@ -87,7 +87,7 @@
 			
 			
 			//判断兼容性                                                                                       
-			var getUserMedia=window.navigator.getUserMedia||
+			window.navigator.getUserMedia=window.navigator.getUserMedia||
 			window.navigator.mozGetUserMedia||
 			window.navigator.webkitGetUserMedia||
 			window.navigator.msGetUserMedia;
@@ -98,7 +98,7 @@
 			//下面为打开摄像头
 			function openCamera(){
 				if(window.navigator.getUserMedia){
-					getUserMedia({
+					window.navigator.getUserMedia({
 						"video":true,
 						"audio":true
 					},successFun,errorFun);
