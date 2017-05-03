@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.title {
+				width: 450px;
+				margin: 100px auto;
+				text-align: center;
+			}
+			
+			#one,
+			#two,
+			#three,
+			#four,
+			#five {
+				width: 300px;
+				background: #A2A2A2;
+				font-size: 26px;
+				line-height: 40px;
+				text-align: center;
+				margin-top: 20px;
+				margin-left: 40px;
+				cursor: pointer;
+				color: #fff;
+			}
+			
+			.text2 {
+				font-size: 16px;
+				color: black;
+				width: 300px;
+				border: 1px solid black;
+				display: none;
+			}
+			
+			#Map {
+				width: 1200px;
+				height: 700px;
+				background: #E5ECF9;
+				margin-left: 400px;
+				margin-top: -335px;
+			}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RIYLs7FExIZEBz0bDziXE1dyynUQTZjL"></script>
+		<script src="js/jquery5.2.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="title">
+			<h1>联系我们</h1>
+			<p>工作时间：周一至周五 09:00-18:00</p>
+		</div>
+
+		<div id="one">
+			<span class="text1">杭州</span>
+			<div class="text2">
+				<p>地址：杭州市拱墅区丰潭路508号天行国际中心7号楼13-15层</p>
+				<p>全国统一服务热线：400-800-3136</p>
+			</div>
+		</div>
+		<div id="two">
+			<span class="text1">北京</span>
+			<div class="text2">
+				<p>地址：杭州市拱墅区丰潭路508号天行国际中心7号楼13-15层</p>
+				<p>全国统一服务热线：400-800-3136</p>
+			</div>
+		</div>
+		<div id="three">
+			<span class="text1">上海</span>
+			<div class="text2">
+				<p>地址：上海市杨浦区国宾路18号12楼B21室</p>
+				<p>QQ： 2366873093</p>
+				<p>电话：400-0833102</p>
+			</div>
+
+		</div>
+		<div id="four">
+			<span class="text1">广州</span>
+			<div class="text2">
+				<p>地址：广州市珠江新城华强路3号富力盈力大厦南塔1311室</p>
+				<p>QQ： 517182985</p>
+				<p>电话：020-28160164</p>
+			</div>
+
+		</div>
+		<div id="five">
+			<span class="text1">成都</span>
+			<div class="text2">
+				<p>地址：广州市珠江新城华强路3号富力盈力大厦南塔1311室</p>
+				<p>QQ： 517182985</p>
+				<p>电话：020-28160164</p>
+			</div>
+
+		</div>
+		<div id="Map">
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		var map = new BMap.Map("Map"); // 创建Map实例
+		map.centerAndZoom(new BMap.Point(116.404, 39.915), 11); // 初始化地图,设置中心点坐标和地图级别
+		map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+		map.setCurrentCity("北京"); // 设置地图显示的城市 此项是必须设置的
+		map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放	
+		var one = document.getElementById("one");
+		var two = document.getElementById("two");
+		var three = document.getElementById("three");
+		var four = document.getElementById("four");
+		var five = document.getElementById("five");
+		one.onclick = function() {
+			var map = new BMap.Map("Map"); // 创建Map实例
+			map.centerAndZoom(new BMap.Point(120.1124440000, 30.3095790000), 11); // 初始化地图,设置中心点坐标和地图级别
+			map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+			map.setCurrentCity("杭州"); // 设置地图显示的城市 此项是必须设置的
+			map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+			one.style.background = "red";
+			two.style.background = "#A2A2A2";
+			three.style.background = "#A2A2A2";
+			four.style.background = "#A2A2A2";
+			five.style.background = "#A2A2A2";
+		}
+		two.onclick = function() {
+			var map = new BMap.Map("Map"); // 创建Map实例
+			map.centerAndZoom(new BMap.Point(116.445749, 39.92695), 11); // 初始化地图,设置中心点坐标和地图级别
+			map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+			map.setCurrentCity("北京"); // 设置地图显示的城市 此项是必须设置的
+			map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+			two.style.background = "red";
+			one.style.background = "#A2A2A2";
+			three.style.background = "#A2A2A2";
+			four.style.background = "#A2A2A2";
+			five.style.background = "#A2A2A2";
+		}
+		three.onclick = function() {
+			var map = new BMap.Map("Map"); // 创建Map实例
+			map.centerAndZoom(new BMap.Point(121.479087, 31.235811), 11); // 初始化地图,设置中心点坐标和地图级别
+			map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+			map.setCurrentCity("上海"); // 设置地图显示的城市 此项是必须设置的
+			map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+			three.style.background = "red";
+			one.style.background = "#A2A2A2";
+			two.style.background = "#A2A2A2";
+			four.style.background = "#A2A2A2";
+			five.style.background = "#A2A2A2";
+		}
+		four.onclick = function() {
+			var map = new BMap.Map("Map"); // 创建Map实例
+			map.centerAndZoom(new BMap.Point(113.275392, 23.136371), 11); // 初始化地图,设置中心点坐标和地图级别
+			map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+			map.setCurrentCity("广州"); // 设置地图显示的城市 此项是必须设置的
+			map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+			four.style.background = "red";
+			one.style.background = "#A2A2A2";
+			two.style.background = "#A2A2A2";
+			three.style.background = "#A2A2A2";
+			five.style.background = "#A2A2A2";
+		}
+		five.onclick = function() {
+			var map = new BMap.Map("Map"); // 创建Map实例
+			map.centerAndZoom(new BMap.Point(104.077657, 30.655796), 11); // 初始化地图,设置中心点坐标和地图级别
+			map.addControl(new BMap.MapTypeControl()); //添加地图类型控件
+			map.setCurrentCity("重庆"); // 设置地图显示的城市 此项是必须设置的
+			map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+			five.style.background = "red";
+			one.style.background = "#A2A2A2";
+			two.style.background = "#A2A2A2";
+			three.style.background = "#A2A2A2";
+			four.style.background = "#A2A2A2";
+		}
+	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#one .text1").click(function() {
+				$("#one .text2").slideToggle("slow");
+				$("#one .text2").css("background", "white");
+			});
+			$("#two .text1").click(function() {
+				$("#two .text2").slideToggle("slow");
+				$("#two .text2").css("background", "white");
+			});
+			$("#three .text1").click(function() {
+				$("#three .text2").slideToggle("slow");
+				$("#three .text2").css("background", "white");
+			});
+			$("#four .text1").click(function() {
+				$("#four .text2").slideToggle("slow");
+				$("#four .text2").css("background", "white");
+			});
+			$("#five .text1").click(function() {
+				$("#five .text2").slideToggle("slow");
+				$("#five .text2").css("background", "white");
+			})
+		})
+	</script>
+
+</html>
