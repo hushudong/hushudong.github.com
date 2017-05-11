@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				padding：0;
+				margin: 0;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.header img {
+				width: 100%;
+				height: 185px;
+			}
+			
+			.mian {
+				width: 100%;
+				background: url(img/2.jpg) no-repeat;
+				background-size: cover;
+				margin-top: 10px;
+			}
+			
+			.mian_top {
+				width: 1200px;
+				margin: auto;
+				background: #C6D1F7;
+			}
+			
+			.mian_top h1 {
+				margin-left: 51px;
+				color: #4169E1;
+			}
+			
+			.mian_center {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_center h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word1 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.mian_bottom {
+				width: 1200px;
+				margin: auto;
+				background: url(../img/sdfsd.jpg) no-repeat;
+				background-size: cover;
+			}
+			
+			.mian_bottom h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word2 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.bottom {
+				width: 100%;
+				height: 150px;
+				background: url(img/3.jpg) repeat-x;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<img src="img/6.jpg" />
+		</div>
+		<div class="mian">
+			<div class="mian_top">
+				<h1>今日所学总结</h1>
+			</div>
+			<div class="mian_center">
+				<h2>(一)上午所学总结</h2>
+				<div class="word1">
+					<ul>
+						<li>1.今天老师带我们继续学习jquery;</li>
+						<li>2triggerHandler()这个特别的方法将会触发指定的事件类型上所有绑定的处理函数。但不会执行浏览器默认动作，也不会产生事件冒泡。;</li>
+						<li>3.unbind()为bind()的反向操作，从每一个匹配的元素中删除绑定的事件。;</li>
+						<li>4.show()显示隐藏的匹配元素;
+						</li>
+						<li>5.empty()删除匹配的元素集合中所有的子节点;
+						</li>
+						<li>6.remove()从DOM中删除所有匹配的元素;
+						</li>
+						<li>7.这个方法不会把匹配的元素从jQuery对象中删除，因而可以在将来再使用这些匹配的元素。但除了这个元素本身得以保留之外，其他的比
+							如绑定的事件，附加的数据等都会被移除。;
+						</li>
+						<li>8.detach()从DOM中删除所有匹配的元素。；
+						</li>
+						<li>9.clone()克隆匹配的DOM元素并且选中这些克隆的副本。;
+						</li>
+						<li>10.eq()获取第N个元素;
+						</li>
+						<li>11.hasClass(clas)检查当前的元素是否含有某个特定的类，如果有，则返回true。;
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mian_bottom">
+				<h2>(二)下午所学总结</h2>
+				<div class="word2">
+					<ul>
+						<li>1.filter()筛选出与指定表达式匹配的元素集合。。</li>
+						<li>2.map()将一组元素转换成其他数组（不论是否是元素数组）;</li>
+						<li>3.has()保留包含特定后代的元素，去掉那些不含有指定后代的元素。。;
+						</li>
+						<li>4.children()取得一个包含匹配的元素集合中每一个元素的所有子元素的元素集合。。;
+						</li>
+						<li>5.find()搜索所有与指定表达式匹配的元素。这个函数是找出正在处理的元素的后代元素的好方法。;
+						</li>
+						<li>6.nexttall()查找当前元素之后所有的同辈元素。。
+						</li>
+						<li>7.nextUntil()查找当前元素之后所有的同辈元素，直到遇到匹配的那个元素为止。;
+						</li>
+						<li>8.parentUntil()查找当前元素的所有的父辈元素，直到遇到匹配的那个元素为止。。;
+						</li>
+						<li>9.siblings()取得一个包含匹配的元素集合中每一个元素的所有唯一同辈元素的元素集合。可以用可选的表达式进行筛选。;
+						</li>
+						<li>10.contents()查找匹配元素内部所有的子节点（包括文本节点）。如果元素是一个iframe，则查找文档内容。;
+						</li>
+						<li>11.andSelf()对于筛选或查找后的元素，要加入先前所选元素时将会很有用;加入先前所选的加入当前元素中。;
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				padding：0;
+				margin: 0;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.header img {
+				width: 100%;
+				height: 185px;
+			}
+			
+			.mian {
+				width: 100%;
+				background: url(img/2.jpg) no-repeat;
+				background-size: cover;
+				margin-top: 10px;
+			}
+			
+			.mian_top {
+				width: 1200px;
+				margin: auto;
+				background: #C6D1F7;
+			}
+			
+			.mian_top h1 {
+				margin-left: 51px;
+				color: #4169E1;
+			}
+			
+			.mian_center {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_center h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word1 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.mian_bottom {
+				width: 1200px;
+				margin: auto;
+				background: url(../img/sdfsd.jpg) no-repeat;
+				background-size: cover;
+			}
+			
+			.mian_bottom h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word2 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.bottom {
+				width: 100%;
+				height: 150px;
+				background: url(img/3.jpg) repeat-x;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			<img src="img/6.jpg" />
+		</div>
+		<div class="mian">
+			<div class="mian_top">
+				<h1>今日所学总结</h1>
+			</div>
+			<div class="mian_center">
+				<h2>(一)上午所学总结</h2>
+				<div class="word1">
+					<ul>
+						<li>1.今天老师带我们开始学习jquery9(ajax);</li>
+						<li>2jQuery 底层 AJAX 实现。简单易用的高层实现见 $.get, $.post 等。$.ajax() 返回其创建的 XMLHttpRequest 对象。大多数情况下你无需直接操作该函数，除非你需要操作不常用的选项，以获得更多的灵活性。;</li>
+						<li>3.$(ajax)中load方法载入远程 HTML 文件代码并插入至 DOM 中。;</li>
+						<li>4.$(ajax) get()方法这是一个简单的 GET 请求功能以取代复杂 $.ajax 。请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。;
+						</li>
+						<li>5.jQuery.getScript()通过 HTTP GET 请求载入并执行一个 JavaScript 文件。;
+						</li>
+						<li>6.jQuery.post()通过远程 HTTP POST 请求载入信息。;
+						</li>
+						<li>7.这是一个简单的 POST 请求功能以取代复杂 $.ajax 。请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax;
+						</li>
+						<li>8.jQuery中ajaxComplete() XMLHttpRequest对象和设置作为参数传递给回调函数。；
+						</li>
+						<li>9.ajax Error() XMLHttpRequest对象和设置作为参数传递给回调函数。捕捉到的错误可作为最后一个参数传递;
+						</li>
+						<li>10.jQuery中ajaxSend() XMLHttpRequest对象和设置作为参数传递给回调函数。;
+						</li>
+						<li>11.jQuery中ajaxStart() AJAX请求开始时执行函数。Ajax 事件。;
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mian_bottom">
+				<h2>(二)下午所学总结</h2>
+				<div class="word2">
+					<ul>
+						<li>1.ajaxStop() AJAX请求结束时执行函数。Ajax 事件。</li>
+						<li>2.ajaxSuccess()XMLHttpRequest 对象和设置作为参数传递给回调函数。;</li>
+						<li>3. $("#msg").ajaxSuccess(function(evt, request, settings){ $(this).append(" 请求成功!");});</li>
+						<li>4. $("#msg").ajaxComplete(function(event,request, settings){ $(this).append("请求完成."); });;</li>
+						<li>5.function (event, XMLHttpRequest, ajaxOptions, thrownError) {// thrownError 只有当异常发生时才会被传递this; // 监听的 dom 元素};
+						</li>
+						<li>6. $("#msg").ajaxSend(function(evt, request, settings){$(this).append("<li>开始请求: " + settings.url + "</li>");})。
+						</li>
+						<li>7.$(AJAX) 请求结束后隐藏信息:$("#loading").ajaxStop(function(){$(this).hide();});;
+						</li>
+						<li>8.serialize()序列表表格内容为字符串，序列表表格内容为字符串示例。;
+						</li>
+						<li>9.jQuery.ajaxSetup()取得一个包含匹配的元素集合中每一个元素的所有唯一同辈元素的元素集合。可以用可选的表达式进行筛选。;
+						</li>
+						<li>10.serializeArray()序列化表格元素 (类似 '.serialize()' 方法) 返回 JSON 数据结构数据。;
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+
+		</div>
+
+	</body>
+
+</html>
