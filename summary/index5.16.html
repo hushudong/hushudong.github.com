@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				padding：0;
+				margin: 0;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.header {
+				width: 100%;
+				height: 185px;
+				background: url(img/3.jpg) repeat-x;
+			}
+			
+			.mian {
+				width: 100%;
+				margin-top: 10px;
+			}
+			
+			.mian_top {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_top h1 {
+				margin-left: 51px;
+				color: #4169E1;
+				font-size: 40px;
+			}
+			
+			.mian_center {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.word1 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+				font-weight: bolder;
+			}
+			
+			.mian_bottom {
+				width: 1200px;
+				margin: auto;
+				background: url(../img/sdfsd.jpg) no-repeat;
+				background-size: cover;
+			}
+			
+			.mian_bottom h1 {
+				margin-left: 53px;
+				color: #4169E1;
+				font-size: 40px;
+			}
+			
+			.word2 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+				font-weight: bolder;
+			}
+			
+			.bottom {
+				width: 100%;
+				height: 150px;
+				background: url(img/3.jpg) repeat-x;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+
+		</div>
+		<div class="mian">
+			<div class="mian_top">
+				<h1>HTML5+CSS3总结一:</h1>
+			</div>
+			<div class="mian_center">
+				<div class="word1">
+					<ul>
+						<li style="font-weight: bolder;font-size: 30px;">个人以为重点是web存储及后台数据的交互:</li>
+						<li>一.Cookie的弊端: <br /> cookie虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的。
+							<br /> 第一：每个特定的域名下最多生成20个cookie
+							<br /> 1.IE6或更低版本最多20个cookie
+
+							<br /> 2.IE7和之后的版本最后可以有50个cookie。
+							<br /> 3.Firefox最多50个cookie
+							<br /> 4.chrome和Safari没有做硬性限制
+							<br /> IE和Opera 会清理近期最少使用的cookie，Firefox会随机清理cookie。<br /> cookie的最大大约为4096字节，为了兼容性，一般不能超过4095字节。
+
+							<br /> IE 提供了一种存储可以持久化用户数据，叫做uerData，从IE5.0就开始支持。每个数据最多128K，<br /> 每个域名下最多1M。这个持久化数据放在缓存中，如果缓存没有清理，那么会一直存在。
+							<br /> 优点：极高的扩展性和可用性
+
+							<br /> 1.通过良好的编程，控制保存在cookie中的session对象的大小。
+
+							<br /> 2.通过加密和安全传输技术（SSL），减少cookie被破解的可能性。
+							<br /> 3.只在cookie中存放不敏感数据，即使被盗也不会有重大损失。
+							<br /> 4.控制cookie的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的cookie。
+							<br /> 缺点：
+
+							<br /> 1.`Cookie`数量和长度的限制。每个domain最多只能有20条cookie，每个cookie长度不能超过4KB，否则会被截掉。
+
+							<br /> 2.安全性问题。如果cookie被人拦截了，那人就可以取得所有的session信息。即使加密也与事无补，因为拦截者并不需要知道cookie的意义，
+
+							<br /> 他只要原样转发cookie就可以达到目的了。
+							<br /> 3.有些状态不可能保存在客户端。例如，为了防止重复提交表单，我们需要在服务器端保存一个计数器。如果我们把这个计数器保存在客户端，
+
+							<br /> 那么它起不到任何作用。
+						</li>
+						<li>二:浏览器本地存储.<br /> 在较高版本的浏览器中，js提供了sessionStorage和globalStorage。在HTML5中提供了localStorage来取代globalStorage。
+							<br /> html5中的Web Storage包括了两种存储方式：sessionStorage和localStorage。<br /> sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。
+
+							<br /> 因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。
+							<br /> 而localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。
+						</li>
+						<li>三.web storage和cookie的区别；<br /> Web Storage的概念和cookie相似，区别是它是为了更大容量存储设计的。Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，<br /> 这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用。
+							<br /> 除此之外，Web Storage拥有setItem,getItem,removeItem,clear等方法，不像cookie需要前端开发者自己封装setCookie，getCookie。<br /> 但是Cookie也是不可以或缺的：Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生<br /> 浏览器的支持除了IE７及以下不支持外，其他标准浏览器都完全支持(ie及FF需在web服务器里运行)，值得一提的是IE总是办好事，例如IE7、IE6中的UserData其实就是javascript本地存储的解决方案。
+
+							<br /> 通过简单的代码封装可以统一到所有的浏览器都支持web storage。<br /> localStorage和sessionStorage都具有相同的操作方法，例如setItem、getItem和removeItem等
+						</li>
+						<li>四:CSS3新增新特性:<br /> CSS3实现圆角（border-radius），阴影（box-shadow），border-image
+							<br /> 对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）
+							<br /> transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜<br /> 增加了更多的CSS选择器 多背景 rgba<br /> 在CSS3中唯一引入的伪元素是::selection.
+							<br /> 媒体查询，多栏布局
+
+						</li>
+						<li>五.html5新特性、移除了下面这些元素 处理HTML5新标签的浏览器兼容问题 区分 HTML 和 HTML5:<br /> * HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。<br /> * 拖拽释放(Drag and drop) API<br /> 语义化更好的内容标签（header,nav,footer,aside,article,section）
+							<br /> 音频、视频API(audio,video)
+							<br /> 画布(Canvas) API<br /> 地理(Geolocation) API<br /> 本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；<br /> sessionStorage 的数据在浏览器关闭后自动删除<br /> 表单控件，calendar、date、time、email、url、search
+
+							<br /> 新的技术webworker, websocket, Geolocation<br /> * 移除的元素<br /> 纯表现的元素：basefont，big，center，font, s，strike，tt，u；<br /> 对可用性产生负面影响的元素：frame，frameset，noframes；
+
+							<br /> 支持HTML5新标签：
+
+							<br /> * IE8/IE7/IE6支持通过document.createElement方法产生的标签，<br /> 可以利用这一特性让这些浏览器支持HTML5新标签，
+							<br /> 浏览器支持新标签后，还需要添加标签默认的样式：
+
+							<br /> * 当然最好的方式是直接使用成熟的框架、使用最多的是html5shim框架
+
+						</li>
+						<li>六.三种减少页面加载时间的方法: <br /> 1.优化图片
+							<br /> 2.图像格式的选择（GIF：提供的颜色较少，可用在一些对颜色要求不高的地方）
+							<br /> 3.优化CSS（压缩合并css，如margin-top,margin-left...)
+							<br /> 4.网址后加斜杠（如www.campr.com/目录，会判断这个“目录是什么文件类型，或者是目录。）
+							<br /> 5.标明高度和宽度（如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，
+							<br /> 浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。
+							<br /> 当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。
+							<br /> 从而加载时间快了，浏览体验也更好了。）
+							<br /> 6.减少http请求（合并文件，合并图片）。
+						</li>
+						<li>七.如何解决跨域问题；<br /> jsonp、 document.domain+iframe、window.name、window.postMessage、服务器上设置代理页面<br /> jsonp的原理是动态插入script标签
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mian_bottom">
+
+				<h1>HTML5+CSS3总结二:</h1>
+
+				<div class="word2">
+					<ul>
+						<li>一.性能优化的方法:<br /> （1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。<br /> （2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数<br /> （3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。<br /> （4） 当需要设置的样式很多时设置className而不是直接操作style。<br /> （5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。<br /> （6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。<br /> （7） 图片预加载，将样式表放在顶部，将脚本放在底部 加上时间戳。</li>
+						<li>二.http状态码 及 代表的意思<br /> 100-199 用于指定客户端应相应的某些动作。<br /> 200-299 用于表示请求成功。<br /> 300-399 用于已经移动的文件并且常被包含在定位头信息中指定新的地址信息。<br /> 400-499 用于指出客户端的错误。400 1、语义有误，当前请求无法被服务器理解。<br /> 401 当前请求需要用户验证 403 服务器已经理解请求，但是拒绝执行它。<br /> 500-599 用于支持服务器错误。 503 – 服务不可用
+						</li>
+						<li>三.一个页面从输入 URL 到页面加载显示完成，执行的过程<br /> 分为4个步骤：
+							<br /> （1），当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，
+							<br /> 同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。
+							<br /> （2）， 浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，<br /> 这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。<br /> （3），一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。
+							<br /> （4），此时，Web服务器提供资源服务，客户端开始下载资源。
+
+							<br /> 请求返回后，便进入了我们关注的前端模块
+
+							<br /> 简单来说，浏览器会解析HTML生成DOM Tree，其次会根据CSS生成CSS Rule Tree，而javascript又可以根据DOM API操作DOM</li>
+						<li>四.如何管理自己的项目建议:<br /> 先期团队必须确定好全局样式（globe.css），编码模式(utf-8) 等；<br /> 编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；
+
+							<br /> 标注样式编写人，各模块都及时标注（标注关键样式调用的地方）；
+
+							<br /> 页面进行标注（例如 页面 模块 开始和结束）；<br /> CSS跟HTML 分文件夹并行存放，命名都得统一（例如style.css）；<br /> JS 分文件夹存放 命名以该JS功能为准的英文翻译。<br /> 图片采用整合的 images.png png8 格式文件使用 尽量整合在一起使用方便将来的管理</li>
+							<li>五.下面网站必备及了解的:<br /> 
+								Node.js、Mongodb、npm、MVVM、MEAN、three.js,React 。<br /> 
+								网站：w3cfuns,sf,hacknews,CSDN,慕课，博客园，InfoQ,w3cplus等</li>
+							<li>六.ajax过程<br /> 
+								(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.<br /> 
+								
+								(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.<br /> 
+								
+								(3)设置响应HTTP请求状态变化的函数.<br /> 
+								
+								(4)发送HTTP请求.<br /> 
+								
+								(5)获取异步调用返回的数据.<br /> 
+								
+								(6)使用JavaScript和DOM实现局部刷新.</li>
+							<li>七.异步加载和延迟加载:<br />
+								1.异步加载的方案： 动态插入script标签<br />
+								2.通过ajax去获取js代码，然后通过eval执行<br />
+								3.script标签上添加defer或者async属性<br />
+								4.创建并插入iframe，让它异步执行js<br />
+								5.延迟加载：有些 js 代码并不是页面初始化的时候就立刻需要的，而稍后的某些情况才需要的。</li>
+							<li>八. JavaScript 的同源策略；<br />
+								概念:同源策略是客户端脚本（尤其是Javascript）的重要的安全度量标准。它最早出自Netscape Navigator2.0，<br />
+								其目的是防止某个文档或脚本从多个不同源装载。<br />
+								
+								这里的同源策略指的是：协议，域名，端口相同，同源策略是一种安全协议。<br />
+								指一段脚本只能读取来自同一来源的窗口和文档的属性。</li>
+							<li>九.最后总结下ajax 是什么?ajax 的交互模型?同步和异步的区别?如何解决跨域问题:<br />
+
+
+								1. 通过异步模式，提升了用户体验<br />
+								
+								  2. 优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用<br />
+								
+								  3. Ajax在客户端运行，承担了一部分本来由服务器承担的工作，减少了大用户量下的服务器负载。<br />
+								
+								  2. Ajax的最大的特点是什么。<br />
+								
+								  Ajax可以实现动态不刷新（局部刷新）<br />
+								  readyState属性 状态 有5个可取值： 0=未初始化 ，1=启动 2=发送，3=接收，4=完成<br />
+								
+								ajax的缺点<br />
+								
+								  1、ajax不支持浏览器back按钮。<br />
+								
+								  2、安全问题 AJAX暴露了与服务器交互的细节。<br />
+								
+								  3、对搜索引擎的支持比较弱。<br />
+								
+								  4、破坏了程序的异常机制。<br />
+								
+								  5、不容易调试。<br />
+								
+								跨域： jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+
+		</div>
+
+	</body>
+
+</html>
