@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				padding：0;
+				margin: 0;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.header {
+				width: 100%;
+				height: 185px;
+				background:url(img/3.jpg)repeat-x;
+			}
+			
+			.mian {
+				width: 100%;
+				background: #D8E3FA;
+				margin-top: -21px;
+			}
+			
+			.mian_top {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_top h1 {
+				margin-left: 51px;
+				color: #4169E1;
+			}
+			
+			.mian_center {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_center h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word1 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.mian_bottom {
+				width: 1200px;
+				margin: auto;
+				background: url(../img/sdfsd.jpg) no-repeat;
+				background-size: cover;
+			}
+			
+			.mian_bottom h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word2 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.bottom {
+				width: 100%;
+				height: 150px;
+				background: url(img/3.jpg) repeat-x;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			
+		</div>
+		<div class="mian">
+			<div class="mian_top">
+				<h1>中级笔试汇总:</h1>
+			</div>
+			<div class="mian_center">
+				<h2>一:</h2>
+				<div class="word1">
+					<ul>
+						<li>
+							1.用原生js怎样添加，删除，插入，替换dom节点  <br />
+							答：添加：appendChild();删除：removeChild();插入:insertBefore();替换:replaceChild();
+						</li>
+						<li>2.列举浏览器对象模型BOM里常用的至少3个对象，并列举window对象常用方法至少3个 <br />
+							答：BOM：window，navigator，location；   window.onload();window.close();window.open();
+						</li>
+						<li>3.html5的新特性有哪些<br />
+							答:有canvas画布功能；媒介的video和audio元素；对本地离线存储的更好支持；标签元素：header；select；aside；footer；article ；新增的地理定位 <br />
+							新增的表单控件：calender；date；time；email；url，search
+						</li>
+						<li>4.css3的新特性有哪些 <br />
+							答：translate()方法；transition，animation，rotate()，transform；border-radius；border-image等
+						</li>
+						<li>
+							5.ajax的核心，它的优缺点至少各2条？
+							答：核心：xmlhttpRequest对象 ； 优点是无需在加载整个页面的状态下，能够更新部分网页的技术，简单易懂；<br />
+							缺点是容易泄露客户端的信息，不安全；请求服务器数据时间较长，降低页面的机制性能
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mian_bottom">
+				<h2>二:</h2>
+				<div class="word2">
+					<ul>
+						<li>1.表单提交中Get和Post方式的区别？  <br />
+							答：get是从服务器上获取数据，post是向服务器发送数据；get获取的数据量较小，不能大于2kb，而post上传的数据量较大，一般被默认为不受限制<br />
+							get安全性非常低，post安全性高
+						</li>
+						<li>2.什么是跨域？如何解决跨域问题？  <br />
+							答：域名，端口，协议等不一致的网路请求为跨域；
+							iframe方法；动态声明script标签；json改为jsonp方法
+						</li>
+						<li>
+							3.请你描述一下cookies，sessionStorage和localStorage的区别？  <br />
+							答：sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。<br />
+							因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。<br />
+							而localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。<br />
+							cookie：一般浏览器都对它有兼容性，而sessionStorage和localStorage只针对部分浏览器有效果。
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+
+		</div>
+
+	</body>
+
+</html>
