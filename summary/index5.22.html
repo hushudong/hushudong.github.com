@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				padding：0;
+				margin: 0;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.header {
+				width: 100%;
+				height: 185px;
+				background:url(img/3.jpg)repeat-x;
+			}
+			
+			.mian {
+				width: 100%;
+				background: #D8E3FA;
+				margin-top: -21px;
+			}
+			
+			.mian_top {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_top h1 {
+				margin-left: 51px;
+				color: #4169E1;
+			}
+			
+			.mian_center {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_center h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word1 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.mian_bottom {
+				width: 1200px;
+				margin: auto;
+				background: url(../img/sdfsd.jpg) no-repeat;
+				background-size: cover;
+			}
+			
+			.mian_bottom h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word2 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.bottom {
+				width: 100%;
+				height: 150px;
+				background: url(img/3.jpg) repeat-x;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			
+		</div>
+		<div class="mian">
+			<div class="mian_top">
+				<h1>今日所学总结:</h1>
+			</div>
+			<div class="mian_center">
+				<h2>Bootstrap汇总1:</h2>
+				<div class="word1">
+					<ul>
+						<li>
+							Bootstrap概览有如下基础内容<br />
+								1.HTML5 文档类型；<br />
+								2.移动设备优先；<br />
+								3.排版与链接；<br />
+								4.Normalize.css；<br />
+								5.布局容器；<br />
+								6.栅格系统；<br />
+								7.排版；<br />
+								8.代码；<br />
+								9.表格；<br />
+								10.表单；<br />
+								11.按钮；<br />
+								12.图片；<br />
+								13.辅助类；<br />
+								14.响应式工具；<br />
+								15.使用 Less；<br />
+								16.使用 Sass；<br />
+								17.返回顶部；<br />
+								18.主题预览
+						</li>
+						<li>全局 CSS 样式<br />
+							设置全局 CSS 样式；基本的 HTML 元素均可以通过 class 设置样式并得到增强效果；还有先进的栅格系统。
+						</li>
+						<li>
+							下表为栅格参数；
+							<table border="1" cellspacing="0" cellpadding="15">
+								<tr>
+									<th></th>
+									<th>超小屏幕 手机 (<768px)</th>
+									<th>小屏幕 平板 (≥768px)</th>
+									<th>中等屏幕 桌面显示器 (≥992px)</th>
+									<th>大屏幕 大桌面显示器 (≥1200px)</th>
+								</tr>
+								<tr>
+									<td>栅格系统行为</td>
+									<td>总是水平排列</td>
+									<td colspan="3">开始是堆叠在一起的，当大于这些阈值时将变为水平排列C</td>
+								</tr>
+								<tr>
+									<td>.container 最大宽度</td>
+									<td>None （自动）</td>
+									<td>750px</td>
+									<td>970px</td>
+									<td>1170px</td>
+								</tr>
+								<tr>
+									<td>类前缀</td>
+									<td>.col-xs-</td>
+									<td>.col-sm-</td>
+									<td>.col-md-</td>
+									<td>.col-lg-</td>
+								</tr>
+								<tr>
+									<td>列（column）数度</td>
+									<td colspan="4">2</td>
+								
+								</tr>
+								<tr>
+									<td>.container 最大宽度</td>
+									<td>自动</td>
+									<td>~62px</td>
+									<td>~81px</td>
+									<td>~97px</td>
+								</tr>
+								<tr>
+									<td>最大列（column）宽</td>
+									<td>None （自动）</td>
+									<td>750px</td>
+									<td>750px</td>
+									<td>750px</td>
+								</tr>
+								<tr>
+									<td>槽（gutter）宽</td>
+									<td colspan="4">30px （每列左右均有 15px）</td>
+								</tr>
+								<tr>
+									<td>可嵌套</td>
+									<td colspan="4">是</td>
+								</tr>
+								<tr>
+									<td>偏移（Offsets）</td>
+								<td colspan="4">是</td>
+								</tr>
+								<tr>
+									<td>列排序</td>
+							<td colspan="4">是</td>
+								</tr>
+							</table>
+						</li>
+						<li>实例：从堆叠到水平排列 ：<br />
+							使用单一的一组 .col-md-* 栅格类，就可以创建一个基本的栅格系统，在手机和平板设备上一开始是堆叠在一起的（超小屏幕到小屏幕这一范围），<br />
+							在桌面（中等）屏幕设备上变为水平排列。所有“列（column）必须放在 ” .row 内。
+						</li>
+						<li>
+							实例：流式布局容器 ：<br />
+							将最外面的布局元素 .container 修改为 .container-fluid，就可以将固定宽度的栅格布局转换为 100% 宽度的布局；<br />
+						</li>
+						<li>
+							实例：移动设备和桌面屏幕：<br />
+							是否不希望在小屏幕设备上所有列都堆叠在一起？那就使用针对超小屏幕和中等屏幕设备所定义的类吧，即 .col-xs-* 和 .col-md-*。<br />
+							请看下面的实例，研究一下这些是如何工作的。
+						</li>
+						<li>
+							实例：多余的列（column）将另起一行排列：<br />
+							如果在一个 .row 内包含的列（column）大于12个，包含多余列（column）的元素将作为一个整体单元被另起一行排列。
+						</li>
+						<li>
+							响应式列重置：<br />
+							在某些阈值时，某些列可能会出现比别的列高的情况，为了克服这一问题，建议联合使用 .clearfix 和 响应式工具类。
+						</li>
+						<li>
+							列偏移：<br />
+							使用 .col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素增加了左侧的边距（margin）。<br />
+							例如，.col-md-offset-4 类将 .col-md-4 元素向右侧偏移了4个列（column）的宽度。
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mian_bottom">
+				<h2>Bootstrap汇总2:</h2>
+				<div class="word2">
+					<ul>
+						<li>1.嵌套列：<br />
+							为了使用内置的栅格系统将内容再次嵌套，可以通过添加一个新的 .row 元素和一系列 .col-sm-* 元素到已经存在的 .col-sm-* 元素内。<br />
+							被嵌套的行（row）所包含的列（column）的个数不能超过12（其实，没有要求你必须占满12列）。
+						</li>
+						<li>2.列排序：<br />
+							通过使用 .col-md-push-* 和 .col-md-pull-* 类就可以很容易的改变列（column）的顺序。
+							
+						</li>
+						<li>
+							3.情境文本颜色	：<br />
+							通过颜色来展示意图，Bootstrap 提供了一组工具类。这些类可以应用于链接，并且在鼠标经过时颜色可以还可以加深，就像默认的链接一样。
+						</li>
+						<li>
+							4.情境背景色：<br />
+							和情境文本颜色类一样，使用任意情境背景色类就可以设置元素的背景。链接组件在鼠标经过时颜色会加深，就像上面所讲的情境文本颜色类一样。
+						</li>
+						<li>
+							5.校验状态：<br />
+							Bootstrap 对表单控件的校验状态，如 error、warning 和 success 状态，都定义了样式。使用时，添加 .has-warning、.has-error <br />
+							 	或 .has-success 类到这些控件的父元素即可。任何包含在此元素之内的 .control-label、.form-control 和 .help-block 元素都将接受这些校验状态的样式。
+						</li>
+						<li>
+							6.添加额外的图标; <br />
+							你还可以针对校验状态为输入框添加额外的图标。只需设置相应的 .has-feedback 类并添加正确的图标即可。<br />
+
+							反馈图标（feedback icon）只能使用在文本输入框 class="form-control" 元素上。
+								
+						</li>
+						<li>
+							7.使用 Sass: <br />
+							虽然 Bootstrap 是基于 Less 构建的，我们还提供了一套官方支持的 Sass 移植版代码。我们将这个版本放在单独的 GitHub 仓库中进行维护，并通过脚本处理源码更新。<br />
+							包含的内容: 	<br />
+							由于 Sass 移植版存放于单独的仓库，并针对不同的使用群体，这个项目中的内容与 Bootstrap 主项目有很大不同。这也是为了保证 Sass 移植版与更多基于 Sass 的系统相兼容。
+							<table border="1" cellspacing="0" cellpadding="15">
+								<tr>
+									<th>路径</th>
+									<th>描述</th>
+								</tr>
+								<tr>
+									<td>tasks/</td>
+									<td>Ruby gem code (Sass configuration, Rails and Compass integrations)</td>
+								</tr>
+								<tr>
+									<td>lib/</td>
+									<td>Converter scripts (turning upstream Less to Sass)</td>
+								</tr>
+								<tr>
+									<td>test/</td>
+									<td>Compilation tests</td>
+								</tr>
+								<tr>
+									<td>templates/</td>
+									<td>Compass package manifest</td>
+								</tr>
+								<tr>
+									<td>vendor/assets/</td>
+									<td>Sass, JavaScript, and font files</td>
+								</tr>
+								<tr>
+									<td>Rakefile</td>
+									<td>Internal tasks, such as rake and convert</td>
+								</tr>
+							</table>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+
+		</div>
+
+	</body>
+
+</html>
