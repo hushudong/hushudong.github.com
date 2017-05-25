@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				padding：0;
+				margin: 0;
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			textarea{
+				 font-weight: bolder;
+				 color: #4169E1;
+			}
+			
+			.header {
+				width: 100%;
+				height: 185px;
+				background:url(img/3.jpg)repeat-x;
+			}
+			
+			.mian {
+				width: 100%;
+				background: #D8E3FA;
+				margin-top: -21px;
+			}
+			
+			.mian_top {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_top h1 {
+				margin-left: 51px;
+				color: #4169E1;
+			}
+			
+			.mian_center {
+				width: 1200px;
+				margin: auto;
+			}
+			
+			.mian_center h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word1 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.mian_bottom {
+				width: 1200px;
+				margin: auto;
+				background: url(../img/sdfsd.jpg) no-repeat;
+				background-size: cover;
+			}
+			
+			.mian_bottom h2 {
+				margin-left: 53px;
+				color: #4169E1;
+			}
+			
+			.word2 {
+				margin-left: 55px;
+				line-height: 45px;
+				color: #6262F2;
+			}
+			
+			.bottom {
+				width: 100%;
+				height: 150px;
+				background: url(img/3.jpg) repeat-x;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header">
+			
+		</div>
+		<div class="mian">
+			<div class="mian_top">
+				<h1>今日所学总结:</h1>
+			</div>
+			<div class="mian_center">
+				<h2>关于一些命令:</h2>
+				<div class="word1">
+					<ul>
+						<li>
+							一.window cmd 命令:<br />
+							cd 文件名----同步目录；<br />
+							mkdir----创建文件夹；<br />
+							rmdir----删除空文件名；<br />
+							del----删除文档；<br />
+							copy----复制文档等等；
+							
+						</li>
+						<li>二：Linux命令:<br />
+							cd sdcard----切换目录 <br />
+							cat ----查看文件内容 <br />
+							rm----删除文件 <br />
+							|s----显示文件或目录 <br />
+							pwd ----显示当前目录 等等；
+							
+						</li>
+					</ul>
+					<h2 style="margin-left:-12px;">ECMAScript6基础知识回顾</h2>
+					<ul>
+						<li>1.
+							ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。
+							<textarea  rows="5" cols="80" >
+					{
+					  let a = 10;
+					  var b = 1;
+					}	
+					
+					
+							</textarea>
+							<br />
+								
+							上面代码在代码块之中，分别用let和var声明了两个变量。然后在代码块之外调用这两个变量，结果let声明的变量报错，var声明的变量返回了正确的值。这表明，let声明的变量只在它所在的代码块有效。
+						</li>
+						<li>2.
+										<textarea  rows="8" cols="80">
+				var a = [];
+				for (var i = 0; i < 10; i++) {
+				  a[i] = function () {
+				    console.log(i);
+				  };
+				}
+				a[6](); // 10
+					
+					
+							</textarea>
+							<br />
+							上面代码中，变量i是var声明的，在全局范围内都有效，所以全局只有一个变量i。每一次循环，变量i的值都会发生改变，<br />
+							而循环内被赋给数组a的function在运行时，会通过闭包读到这同一个变量i，导致最后输出的是最后一轮的i的值，也就是10。<br />
+																			<textarea  rows="8" cols="80">
+				var a = [];
+				for (let i = 0; i < 10; i++) {
+				  a[i] = function () {
+				    console.log(i);
+				  };
+				}
+				a[6](); // 6
+					
+					
+							</textarea>
+							<br />
+							上面代码中，变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6。你可能会问，如果每一轮循环的变量i都是重新声明的，<br />
+							那它怎么知道上一轮循环的值，从而计算出本轮循环的值？这是因为 JavaScript 引擎内部会记住上一轮循环的值，初始化本轮的变量i时，就在上一轮循环的基础上进行计算。<br />
+							另外，for循环还有一个特别之处，就是循环语句部分是一个父作用域，而循环体内部是一个单独的子作用域。<br />
+																							<textarea  rows="5" cols="80">
+				for (let i = 0; i < 3; i++) {
+				  let i = 'abc';
+				  console.log(i);
+				}
+					
+					
+							</textarea>
+							<br />
+							上面代码输出了3次abc，这表明函数内部的变量i和外部的变量i是分离的。
+						</li>
+						<li>3.不存在变量提升<br />
+							var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined。这种现象多多少少是有些奇怪的，按照一般的逻辑，变量应该在声明语句之后才可以使用。<br />
+
+							为了纠正这种现象，let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。
+							
+																							<textarea  rows="8" cols="80">
+				// var 的情况
+				console.log(foo); // 输出undefined
+				var foo = 2;
+				
+				// let 的情况
+				console.log(bar); // 报错ReferenceError
+				let bar = 2;
+							</textarea>	
+							<br />
+							上面代码中，变量foo用var命令声明，会发生变量提升，即脚本开始运行时，变量foo已经存在了，但是没有值，所以会输出undefined。<br />
+							变量bar用let命令声明，不会发生变量提升。这表示在声明它之前，变量bar是不存在的，这时如果用到它，就会抛出一个错误。
+						</li>
+						<li>4.Class基本语法 <br />
+							JavaScript语言的传统方法是通过构造函数，定义并生成新对象。下面是一个例子。<br />
+																							<textarea  rows="8" cols="80">
+				function Point(x, y) {
+				  this.x = x;
+				  this.y = y;
+				}
+				
+				Point.prototype.toString = function () {
+				  return '(' + this.x + ', ' + this.y + ')';
+				};
+				
+				var p = new Point(1, 2);
+							</textarea>	
+							<br />
+							上面这种写法跟传统的面向对象语言（比如C++和Java）差异很大，很容易让新学习这门语言的程序员感到困惑。<br />
+
+							ES6提供了更接近传统语言的写法，引入了Class（类）这个概念，作为对象的模板。通过class关键字，可以定义类。基本上，ES6的class可以看作只是一个语法糖，<br />
+							它的绝大部分功能，ES5都可以做到，新的class写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已。上面的代码用ES6的“类”改写，就是下面这样。<br />
+																								<textarea  rows="8" cols="80">
+				//定义类
+				class Point {
+				  constructor(x, y) {
+				    this.x = x;
+				    this.y = y;
+				  }
+				
+				  toString() {
+				    return '(' + this.x + ', ' + this.y + ')';
+				  }
+				}
+							</textarea>
+							<br />
+							上面代码定义了一个“类”，可以看到里面有一个constructor方法，这就是构造方法，而this关键字则代表实例对象。<br />
+							也就是说，ES5的构造函数Point，对应ES6的Point类的构造方法。<br />
+
+							Point类除了构造方法，还定义了一个toString方法。注意，定义“类”的方法的时候，前面不需要加上function这个关键字，直接把函数定义放进去了就可以了。<br />
+							另外，方法之间不需要逗号分隔，加了会报错。ES6的类，完全可以看作构造函数的另一种写法。
+																								<textarea  rows="8" cols="80">
+				class Point {
+				  // ...
+				}
+				
+				typeof Point // "function"
+				Point === Point.prototype.constructor // true
+							</textarea>
+							<br />
+						</li>
+						<li>4.constructor方法<br />
+							constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。一个类必须有constructor方法，如果没有显式定义，一个空的constructor方法会被默认添加。<br />
+							constructor方法默认返回实例对象（即this），完全可以指定返回另外一个对象<br />
+																									<textarea  rows="8" cols="80">
+				class Foo {
+				  constructor() {
+				    return Object.create(null);
+				  }
+				}
+				
+				new Foo() instanceof Foo
+							</textarea><br />
+							上面代码中，constructor函数返回一个全新的对象，结果导致实例对象不是Foo类的实例。<br />
+
+							类的构造函数，不使用new是没法调用的，会报错。这是它跟普通构造函数的一个主要区别，后者不用new也可以执行。
+							
+						</li>
+						<li>5.类的实例对象<br />
+							生成类的实例对象的写法，与ES5完全一样，也是使用new命令。如果忘记加上new，像函数那样调用Class，将会报错。<br />
+																									<textarea  rows="6" cols="80">
+				// 报错
+				var point = Point(2, 3);
+				
+				// 正确
+				var point = new Point(2, 3);
+							</textarea><br />
+							与ES5一样，实例的属性除非显式定义在其本身（即定义在this对象上），否则都是定义在原型上（即定义在class上）。<br />
+																									<textarea  rows="10" cols="80">
+				//定义类
+				class Point {
+				
+				  constructor(x, y) {
+				    this.x = x;
+				    this.y = y;
+				  }
+				
+				  toString() {
+				    return '(' + this.x + ', ' + this.y + ')';
+				  }
+				
+				}
+				
+				var point = new Point(2, 3);
+				
+				point.toString() // (2, 3)
+				
+				point.hasOwnProperty('x') // true
+				point.hasOwnProperty('y') // true
+				point.hasOwnProperty('toString') // false
+				point.__proto__.hasOwnProperty('toString') // true
+							</textarea><br />
+							上面代码中，x和y都是实例对象point自身的属性（因为定义在this变量上），所以hasOwnProperty方法返回true，而toString是原型对象的属性（因为定义在Point类上），<br />
+							所以hasOwnProperty方法返回false。这些都与ES5的行为保持一致。<br />
+
+							与ES5一样，类的所有实例共享一个原型对象。<br />
+																									<textarea  rows="6" cols="80">
+				var p1 = new Point(2,3);
+				var p2 = new Point(3,2);
+				
+				p1.__proto__ === p2.__proto__
+				//true
+							</textarea><br />
+							上面代码中，p1和p2都是Point的实例，它们的原型都是Point.prototype，所以__proto__属性是相等的。<br />
+
+							这也意味着，可以通过实例的__proto__属性为Class添加方法。<br />
+																									<textarea  rows="10" cols="80">
+				var p1 = new Point(2,3);
+				var p2 = new Point(3,2);
+				
+				p1.__proto__.printName = function () 
+				{ return 'Oops' };
+				
+				p1.printName() // "Oops"
+				p2.printName() // "Oops"
+				
+				var p3 = new Point(4,2);
+				p3.printName() // "Oops"
+							</textarea><br />
+							上面代码在p1的原型上添加了一个printName方法，由于p1的原型就是p2的原型，因此p2也可以调用这个方法。<br />
+							而且，此后新建的实例p3也可以调用这个方法。这意味着，使用实例的__proto__属性改写原型，必须相当谨慎，不推荐使用，因为这会改变Class的原始定义，影响到所有实例。
+							
+						</li>
+						<li>6.不存在变量提升;<br />
+							Class不存在变量提升（hoist），这一点与ES5完全不同。<br />
+																									<textarea  rows="3" cols="80">
+				new Foo(); // ReferenceError
+				class Foo {}
+							</textarea><br />
+							上面代码中，Foo类使用在前，定义在后，这样会报错，因为ES6不会把类的声明提升到代码头部。这种规定的原因与下文要提到的继承有关，必须保证子类在父类之后定义。<br />
+																									<textarea  rows="5" cols="80">
+				{
+				  let Foo = class {};
+				  class Bar extends Foo {
+				  }
+				}
+							</textarea><br />
+							上面的代码不会报错，因为Bar继承Foo的时候，Foo已经有定义了。但是，如果存在class的提升，上面代码就会报错，因为class会被提升到代码头部，而let命令是不提升的，所以导致Bar继承Foo的时候，Foo还没有定义。
+						</li>
+						<li>7.Class表达式<br />
+							与函数一样，类也可以使用表达式的形式定义。<br />
+																									<textarea  rows="5" cols="80">
+				const MyClass = class Me {
+				  getClassName() {
+				    return Me.name;
+				  }
+				};
+				</textarea><br />
+				上面代码使用表达式定义了一个类。需要注意的是，这个类的名字是MyClass而不是Me，Me只在Class的内部代码可用，指代当前类。<br />
+																									<textarea  rows="5" cols="80">
+				let inst = new MyClass();
+				inst.getClassName() // Me
+				Me.name // ReferenceError: Me is not defined
+				</textarea><br />
+				上面代码表示，Me只在Class内部有定义。<br />
+
+				如果类的内部没用到的话，可以省略Me，也就是可以写成下面的形式.<br />
+																									<textarea  rows="2" cols="80">
+				const MyClass = class { /* ... */ };
+				</textarea><br />
+				采用Class表达式，可以写出立即执行的Class。<br />
+																									<textarea  rows="10" cols="80">
+				let person = new class {
+				  constructor(name) {
+				    this.name = name;
+				  }
+				
+				  sayName() {
+				    console.log(this.name);
+				  }
+				}('张三');
+				
+				person.sayName(); // "张三"
+				</textarea><br />
+				上面代码中，person是一个立即执行的类的实例等等
+				
+						</li>
+					</ul>
+					
+				</div>
+			</div>
+			<div class="mian_bottom">
+				<h2>Node.js基础总结:</h2>
+				<div class="word2">
+					<ul>
+						<li>1.Node.js定义：<br />
+							Node.js是一个服务器端JavaScript解释器，底层采用的是libevent；<br />
+							Node.js是一个基于Chrome V8 引擎的JavaScript运行环境 ；<br />
+							Node.js使用呢一个事件驱动，非阻塞式IO的模型，使其轻量又高效
+						</li>
+						<li>2.npm是Node.js的包管理系统；<br />
+							npm install 为安装命令；<br />
+							npm view 为查看命令<br />
+							npm-V 为查看npm安装的版本<br />
+							npm list 查看当前目录下已安装的node包<br />
+							npm help 为安装命令<br />
+						</li>
+						<li>2.从服务器查看本地文件的案例；<br />
+																													<textarea  rows="10" cols="80">
+				var http=require("http");
+				var fs=require("fs");
+				var server=http.createServer(function(req,res){
+					fs.readFile("login.html",function(error,data){
+						if(error) throw error;
+						res.writeHead(200,"Content-Type","text/plain");
+						res.end(data);
+					});
+				});
+				server.listen(27010);
+				</textarea><br />
+						</li>
+						<li>4.服务器同步读取和异步读取的区别；<br />
+																																	<textarea  rows="10" cols="80">
+				var http=require("http");
+				var fs=require("fs");
+				var server=http.createServer(function(req,res){
+					fs.readFile("login.html",function(error,data){
+						if(error) throw error;
+						res.writeHead(200,"Content-Type","text/plain");
+						res.end(data);
+					});
+				});
+				server.listen(27010);
+				</textarea><br />						
+						</li>
+						<li>
+							5.使用 Node 创建 Web 服务器；<br />
+							Node.js 提供了 http 模块，http 模块主要用于搭建 HTTP 服务端和客户端，使用 HTTP 服务器或客户端功能必须调用 http 模块，代码如下：<br />
+																																	<textarea  rows="20" cols="80">
+								var http = require('http');
+				var fs = require('fs');
+				var url = require('url');
+				
+				
+				// 创建服务器
+				http.createServer( function (request, response) {  
+				// 解析请求，包括文件名
+				var pathname = url.parse(request.url).pathname;
+				   
+			   // 输出请求的文件名
+			   console.log("Request for " + pathname + " received.");
+			   
+			   // 从文件系统中读取请求的文件内容
+			   fs.readFile(pathname.substr(1), function (err, data) {
+			   if (err) {
+			         console.log(err);
+			         // HTTP 状态码: 404 : NOT FOUND
+			         // Content Type: text/plain
+			         response.writeHead(404, {'Content-Type': 'text/html'});
+			    }else{	         
+			         // HTTP 状态码: 200 : OK
+			         // Content Type: text/plain
+			         response.writeHead(200, {'Content-Type': 'text/html'});	
+			         
+			     // 响应文件内容
+			     	response.write(data.toString());		
+			      }
+			      //  发送响应数据
+			      response.end();
+			   });   
+				}).listen(8081);
+				
+				// 控制台会输出以下信息
+				console.log('Server running at http://127.0.0.1:8081/');
+				</textarea><br />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+
+		</div>
+
+	</body>
+
+</html>
