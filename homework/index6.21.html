@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			html{
+				font-size: 100px;
+			}
+			#box{
+				width: 100%;
+				height: 3.4rem;
+				border: 1px solid red;
+				position: relative;
+				overflow: hidden;
+				
+			}
+			@media screen and (min-width:320px) {
+				html{
+					font-size: 50px;
+				}
+				
+			} 
+			@media screen and (min-width:375px) {
+				html{
+					font-size: 58.59px;
+				}
+				
+			} 
+			@media screen and (min-width:640px) {
+				html{
+					font-size:100px;
+				}
+				
+			} 
+			@media screen and (min-width:780px) {
+				html{
+					font-size: 121.86px;
+				}
+				
+			} 
+			@media screen and (min-width:1080px) {
+				html{
+					font-size:168.75px;
+				}
+				
+			} 
+			
+			
+			#box ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				width: 800%;
+				position: absolute;
+				height:3.4rem;
+			}
+			
+	
+			#box ul li {
+				float: left;
+				width: 100vw;
+			}
+			
+			#box ul li>img {
+				width:100%;
+				height:3.4rem;
+			}
+			
+			#box #numList {
+				position: absolute;
+				bottom: 0.2rem;
+				right: 20%;
+				height: 0.3rem;
+				width: 2.5rem;
+			}
+			
+			#box #numList li {
+				float: left;
+				width: 0.3rem;
+				height: 0.3rem;
+				background: #000000;
+				color: #fff;
+				text-align: center;
+				font-size: 0.25rem;
+				line-height: 0.3rem;
+				margin-left: 0.1rem;
+			}
+			
+			
+			
+		
+		</style>
+		<script src="libs/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="box">
+			<ul id="imgList">
+				<li><img src="img/imgOne.jpg" /></li>
+				<li><img src="img/imgTwo.jpg" /></li>
+				<li><img src="img/imgThree.jpg" /></li>
+				<li><img src="img/imgFour.jpg" /></li>
+				<li><img src="img/imgFive.jpg" /></li>
+			</ul>
+
+			<ul id="numList">
+				<li style="background:red;">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+
+			</ul>
+
+				
+			</div>
+			<script type="text/javascript">
+			
+		
+				$(function(){
+					var index=0;
+					var timer=null;
+					
+					function scrollPicture(){
+						clearInterval(timer);
+						timer=setInterval(function(){
+							if(index==4){
+								index=0;
+							}else{
+								index++;
+							}
+							var objOne={
+								"margin-left":-index*6.4+"rem"
+							}
+							var objTwo={
+								"margin-left":0+"rem"
+							}
+						
+							$("#imgList li").eq(index).animate(objOne,500).siblings().stop().animate(objTwo,500);
+							$("#numList li").eq(index).css("background","red").siblings().css("background","black");
+							
+						},1000)
+					}
+					scrollPicture();
+					
+					var imgList=document.getElementById("imgList").children;
+					console.log(imgList);
+					imgList.ontouchstart=function(){
+						clearInterval(timer);
+						console.log("hellow world")
+					}
+				})
+					//拖拽效果；
+				
+				
+//					
+////					function scrollDirection(index){
+////						var flag=$("#imgList li:first").width()+0.4;
+////							var objOne={
+////								"margin-left":-flag*index+"rem"
+////							}
+////							var objTwo={
+////								"margin-left":0+"rem"
+////							}
+////					
+					
+					
+					
+//					
+				
+//				window.onload = function() {
+//					var imgList = document.getElementById("imgList");
+//					var numList = document.getElementById("numList").children;
+//					var box=document.getElementById("box");
+//					var timer = null;
+//					var target = -6.4;
+//					var index = 0;
+//					//开启自动轮播：
+//					timer = setInterval(function() {
+//						move(-6.4);
+//					}, 1000)
+					
+					
+//					box.onmouseover=function(){
+//						clearInterval(timer);
+//					}
+//					box.onmouseout=function(){
+//						timer = setInterval(function() {
+//							rightRadio.onclick();
+//						}, 1000)
+//					}
+					
+					//左右按钮切换；
+//					rightRadio.onclick = function() {
+//						move(-400);
+//					}
+//					leftRadio.onclick = function() {
+//						move(400);
+//					}
+
+					//开始切换；
+//					function move(speed) {
+//						//临界点处理；
+//						if(target == 0) {
+//							target = -32;
+//							imgList.style.left = target +"rem";
+//						} else if(target == -38.4) {
+//							target = -6.4;
+//							imgList.style.left = target + "rem";
+//						}
+//						target += speed;
+//						imgList.style.left = target + "rem";
+//
+//						//下标处理；
+//						index = Math.abs(target/6.4-1);
+//						console.log(index);
+//						if(target == 0) {
+//							index = 4;
+//						} else if(target == -38.4) {
+//							index = 0;
+//						}
+//						radioColor();
+//					};
+////					
+////
+////					//改变按钮颜色事件；
+//					function radioColor() {
+//						for(var i = 0; i < numList.length; i++) {
+//							numList[i].className = "corTwo";
+//						}
+//						numList[index].className = "corOne";
+//					}
+//					
+//					//按钮事件处理；
+//					function radioEventstart() {
+//						for(var i = 0; i < numList.length; i++) {
+//							(function(i) {
+//								numList[i].ontouchstart = function(){
+//									clearInterval(timer);
+//									index = i;
+//									target = -(i + 1) * 6.4;
+//									move(0);
+//									radioColor();
+//								}
+//							})(i)
+//						}
+//					}
+//					radioEventstart();
+//				}
+			</script>
+
+	</body>
+
+</html>
