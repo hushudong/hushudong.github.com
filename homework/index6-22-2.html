@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				background: url(img/beijin2.jpg)no-repeat;
+				background-size:cover;
+			}
+			
+			@media all and (min-width: 320px) {
+				html {
+					font-size: 50px;
+				}
+			}
+			
+			@media all and (min-width: 360px) {
+				html {
+					font-size: 56.25px;
+				}
+			}
+			
+			@media all and (min-width: 400px) {
+				html {
+					font-size: 62.5px;
+				}
+			}
+			
+			@media all and (min-width: 440px) {
+				html {
+					font-size: 68.75px;
+				}
+			}
+			
+			@media all and (min-width: 600px) {
+				html {
+					font-size: 93.75px;
+				}
+			}
+			
+			@media all and (min-width: 640px) {
+				html {
+					font-size: 100px;
+				}
+			}
+			
+			@media all and (min-width: 800px) {
+				html {
+					font-size: 125px;
+				}
+			}
+			
+			.box {
+				width: 100vw;
+				height: 100vh;
+				position: relative;
+			}
+			
+			#bgOut{
+				width: 3.8rem;
+				height:3.7rem;
+				background: url(img/img2_03.png)no-repeat;
+				background-size:cover;
+				position:absolute;
+				top: 50%;
+				left: 22%;
+				-webkit-animation: BgOut 1s linear infinite 3s;
+    			-ms-animation:  BgOut 1s linear infinite 3s;
+    			-moz-animation:  BgOut 1s linear infinite 3s;
+    			animation:  BgOut 1s linear infinite 3s;
+			}
+			@-ms-keyframes BgOut{
+				0%{
+					
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			
+			@-webkit-keyframes BgOut{
+				0%{
+					
+					transform: rotate(0deg);
+				}
+			
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			
+			@keyframes BgOut{
+				0%{
+					transform: rotate(0deg);
+				}
+		
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		
+			
+			#bgIn{
+				position:absolute;
+				width: 2.95rem;
+				height:2.95rem;
+				background: url(img/img3_03.png)no-repeat;
+				background-size:cover;
+				top: 54%;
+    			left: 29%;
+    			-webkit-animation:bgIn 1s linear infinite 1.5s;
+    			-ms-animation:bgIn 1s linear infinite 1.5s;
+    			-moz-animation:bgIn 1s linear infinite 1.5s;
+    			animation:bgIn 1s linear infinite 1.5s;
+			}
+			@-ms-keyframes bgIn{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+				
+			}
+			
+			@-webkit-keyframes bgIn{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+				
+			}
+			
+			@keyframes bgIn{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+				
+			}
+			
+			#text{
+				position: absolute;
+				top: 54%;
+    			left: 36%;
+    			width: 2.0rem;
+				height:2.0rem;
+    			font-size:0.60rem;
+    			color: #fff;
+    			text-align: center;
+    			line-height: 2.95rem;
+    			-webkit-animation:textYear 1s linear ;
+    			-ms-animation:textYear 1s linear ;
+    			-moz-animation:textYear 1s linear;
+    			animation:textYear 1s linear;
+			}
+			
+			
+			@-ms-keyframes textYear{
+				0%{
+					font-size:0.60rem;
+				}
+				50%{
+					font-size:0.30rem;
+				}
+				100%{
+					font-size:0.60rem;
+				}
+			}
+			
+			@-webkit-keyframes textYear{
+				0%{
+					font-size:0.60rem;
+				}
+				50%{
+					font-size:0.30rem;
+				}
+				100%{
+					font-size:0.60rem;
+				}
+			}
+			
+			@keyframes textYear{
+				0%{
+					font-size:0.60rem;
+				}
+				50%{
+					font-size:0.30rem;
+				}
+				100%{
+					font-size:0.60rem;
+				}
+			}
+			
+			.wheelOut{
+				position: fixed;
+				width: 1.5rem;
+				height: 1.5rem;
+				right:5%;
+				top: 5%;
+				border-radius: 50%;
+				background:#ef1235;
+			}
+			.wheelOut .radioOne{
+				position: absolute;
+				top: 26%;
+    			right: 12%;
+				z-index: 3;
+				-ms-animation: LineBg 1.5s linear infinite;
+				-moz-animation: LineBg 1.5s linear infinite;
+				-webkit-animation:LineBg 1s linear infinite;
+				animation:LineBg 1s linear infinite;
+			}
+					@-ms-keyframes LineBg{
+				0%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+				50%{
+					transform-origin: right top;
+					transform:rotate(-45deg);
+				}
+				75%{
+					transform-origin: right top;
+					transform:rotate(45deg);
+				}
+				100%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+			}
+			
+			@-webkit-keyframes LineBg{
+				0%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+				50%{
+					transform-origin: right top;
+					transform:rotate(-45deg);
+				}
+				75%{
+					transform-origin: right top;
+					transform:rotate(45deg);
+				}
+				100%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+			}
+			
+			@keyframes LineBg{
+				0%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+				50%{
+					transform-origin: right top;
+					transform:rotate(-45deg);
+				}
+				75%{
+					transform-origin: right top;
+					transform:rotate(45deg);
+				}
+				100%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+			}
+			.wheelIn{
+				position: fixed;
+				width: 1.2rem;
+				height: 1.2rem;
+				right: 7.1%;
+    			top: 6.4%;
+				border-radius: 50%;
+				background: #fff;
+			
+			}
+			
+			#radioTwo{
+				position: absolute;
+				top: 18%;
+    			left: 18%;
+				z-index: 2;
+				width: 1.0rem;
+				height: 1.0rem;
+				-ms-animation: roTale 1.5s linear infinite;
+				-moz-animation: roTale 1.5s linear infinite;
+				-webkit-animation:roTale 1s linear infinite;
+				animation:roTale 1s linear infinite;
+			}
+			@-ms-keyframes roTale{
+				from{
+					transform:rotate(0);
+				}
+				to{
+					transform:rotate(360deg)
+				}
+			}
+			
+			@-webkit-keyframes roTale{
+				from{
+					transform:rotate(0);
+				}
+				to{
+					transform:rotate(360deg)
+				}
+			}
+			
+			@keyframes roTale{
+				from{
+					transform:rotate(0);
+				}
+				to{
+					transform:rotate(360deg)
+				}
+			}
+		
+		
+		</style>
+		<script src="libs/zeptoOne.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/touch.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="box">
+			<div id="bgOut">
+				
+			</div>
+			<div id="bgIn">
+					
+			</div>
+			<div id="text">
+				2 0 1 7
+			</div>
+		</div>
+		<div class="wheelOut">
+			<img src="img/5_03.png" class="radioOne"/>
+			<img src="img/3_03.png" id="radioTwo"/>
+			<div class="wheelIn"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var audio=document.createElement("audio");
+			audio.setAttribute("src","http://fs.web.kugou.com/3ebc6dd31c6a452ad6a517279f2e5dfb/594ba49d/G051/M07/09/08/cw0DAFaP7GiACTU7AGRQOS1gKcQ977.mp3")
+			audio.play();
+			
+			document.body.appendChild(audio);
+			
+			
+			var timer=null;
+			timer=setInterval(function(){
+				
+				window.open("index6-22-3.html","self");
+			},5000)
+		
+		
+				
+		}
+		
+		
+	</script>
+
+</html>

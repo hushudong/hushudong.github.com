@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				background: url(img/pic2.png)no-repeat;
+				background-size:cover;
+			}
+			
+			@media all and (min-width: 320px) {
+				html {
+					font-size: 50px;
+				}
+			}
+			
+			@media all and (min-width: 360px) {
+				html {
+					font-size: 56.25px;
+				}
+			}
+			
+			@media all and (min-width: 400px) {
+				html {
+					font-size: 62.5px;
+				}
+			}
+			
+			@media all and (min-width: 440px) {
+				html {
+					font-size: 68.75px;
+				}
+			}
+			
+			@media all and (min-width: 600px) {
+				html {
+					font-size: 93.75px;
+				}
+			}
+			
+			@media all and (min-width: 640px) {
+				html {
+					font-size: 100px;
+				}
+			}
+			
+			@media all and (min-width: 800px) {
+				html {
+					font-size: 125px;
+				}
+			}
+			
+			.box {
+				width: 100vw;
+				height: 100vh;
+			}
+			
+			#bgOut{
+				width: 3.8rem;
+				height:3.7rem;
+				background: url(img/pic3_03.png)no-repeat;
+				background-size:cover;
+				position: relative;
+				margin: 5.8rem auto;
+				-webkit-animation: Bg 2s linear infinite;
+    			-ms-animation:  Bg 2s linear infinite;
+    			-moz-animation:  Bg 2s linear infinite;
+    			animation:  Bg 2s linear infinite;
+			
+			}
+			@-ms-keyframes Bg{
+				0%{
+					
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			
+			@-webkit-keyframes Bg{
+				0%{
+					
+					transform: rotate(0deg);
+				}
+			
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			
+			@keyframes Bg{
+				0%{
+					transform: rotate(0deg);
+				}
+		
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			
+			.wheelOut{
+				position: fixed;
+				width: 1.5rem;
+				height: 1.5rem;
+				right:5%;
+				top: 5%;
+				border-radius: 50%;
+				background:#ef1235;
+			}
+			.wheelOut .radioOne{
+				position: absolute;
+				top: 26%;
+    			right: 12%;
+				z-index: 3;
+				-ms-animation: LineBg 1.5s linear infinite;
+				-moz-animation: LineBg 1.5s linear infinite;
+				-webkit-animation:LineBg 1s linear infinite;
+				animation:LineBg 1s linear infinite;
+			}
+					@-ms-keyframes LineBg{
+				0%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+				50%{
+					transform-origin: right top;
+					transform:rotate(-45deg);
+				}
+				75%{
+					transform-origin: right top;
+					transform:rotate(45deg);
+				}
+				100%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+			}
+			
+			@-webkit-keyframes LineBg{
+				0%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+				50%{
+					transform-origin: right top;
+					transform:rotate(-45deg);
+				}
+				75%{
+					transform-origin: right top;
+					transform:rotate(45deg);
+				}
+				100%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+			}
+			
+			@keyframes LineBg{
+				0%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+				50%{
+					transform-origin: right top;
+					transform:rotate(-45deg);
+				}
+				75%{
+					transform-origin: right top;
+					transform:rotate(45deg);
+				}
+				100%{
+					transform-origin: right top;
+					transform:rotate(0deg);
+				}
+			}
+			.wheelIn{
+				position: fixed;
+				width: 1.2rem;
+				height: 1.2rem;
+				right: 7.1%;
+    			top: 6.4%;
+				border-radius: 50%;
+				background: #fff;
+			}
+			
+			#radioTwo{
+				position: absolute;
+				top: 18%;
+    			left: 18%;
+				z-index: 2;
+				width: 1.0rem;
+				height: 1.0rem;
+				-ms-animation: roTale 1.5s linear infinite;
+				-moz-animation: roTale 1.5s linear infinite;
+				-webkit-animation:roTale 1s linear infinite;
+				animation:roTale 1s linear infinite;
+			}
+			@-ms-keyframes roTale{
+				from{
+					transform:rotate(0);
+				}
+				to{
+					transform:rotate(360deg)
+				}
+			}
+			
+			@-webkit-keyframes roTale{
+				from{
+					transform:rotate(0);
+				}
+				to{
+					transform:rotate(360deg)
+				}
+			}
+			
+			@keyframes roTale{
+				from{
+					transform:rotate(0);
+				}
+				to{
+					transform:rotate(360deg)
+				}
+			}
+		</style>
+		<script src="libs/zeptoOne.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/touch.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="box">
+			<div id="bgOut">
+				
+			</div>
+		</div>
+		<div class="wheelOut">
+			<img src="img/5_03.png" class="radioOne"/>
+			<img src="img/3_03.png" id="radioTwo"/>
+			<div class="wheelIn"></div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var audio=document.createElement("audio");
+				audio.setAttribute("src","http://fs.web.kugou.com/3ebc6dd31c6a452ad6a517279f2e5dfb/594ba49d/G051/M07/09/08/cw0DAFaP7GiACTU7AGRQOS1gKcQ977.mp3")
+				audio.play();
+				document.body.appendChild(audio);
+				audio.pause();
+				
+			}	
+		</script>
+	</body>
+
+</html>
