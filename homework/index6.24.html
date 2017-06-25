@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index6.24.css" />
+		<script src="libs/touch.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/zeptoOne.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="title">
+			<ul id="titleList">
+				<li style="border-radius: 0.1rem 0 0 0.1rem;background: #fff;color: #008AD4;" class="">NBA</li>
+				<li class="blue">关注</li>
+				<li style="border-radius:0 0.1rem 0.1rem 0;" class="blue">足球</li>
+			</ul>
+		</div>
+		<div class="header">
+			<ul id="headerList">
+				<li>NBA</li>
+				<li>最新</li>
+				<li>最热</li>
+			</ul>
+		</div>
+		<div class="mian">
+			
+			<!--<div class="pageOne"></div>
+			<div></div>
+			<div></div>-->
+			<!--<div id="bbun">
+				<div class="picture">
+					
+				</div>
+				<div class="right">
+					<div class="date"></div>
+					<div class="news"></div>
+				</div>
+			</div>-->
+		</div>
+	</body>
+	<!--<script type="text/javascript">
+		$(function(){
+			//手势滑动事件;
+			var page = $(".mian>div");
+			var pageWidth=$(".mian>div").offset().width;
+			console.log(pageWidth);
+			
+//			var target=-pageWidth;
+//			console.log(target);
+			
+			var startPathX, endPathX;
+			var maxPath = 300;
+			var startTime, endTime;
+			var maxTime = 20;
+			page.on("touchstart", function(e) {
+				//获取起始时间
+				startTime = new Date();
+				//获取起始坐标；
+				startPathX=endPathX=e.touches[0].clientX;
+			})
+			page.on("touchmove", function(e) {
+				
+				//获取手势移动时x坐标（y坐标不作考虑）；
+				endPathX=e.touches[0].clientX;
+			})
+			page.on("touchmove", function(e) {
+				
+				//获取手势离开结束的时间；
+				endTime = new Date();
+				
+				//结束时间与起始时间的差值;
+				var leftTime=Math.abs(endTime-startTime);
+			})
+		})
+	</script>-->
+	<script type="text/javascript">
+		
+		
+		$(function(){
+			$("#titleList>li").on("touchstart",function(){
+				$('#titleList>li').css({
+					"background":"#fff",
+					"color":"#008AD4"
+				});
+				$(this).siblings().css({
+					"background":"#008AD4",
+					"color":"#fff"
+				})
+				$(".mian>div").eq($(this).index()).show().siblings().hide();
+			})
+			
+			$(".header #headerList>li").on("touchstart",function(){
+				$(this).addClass("hr").siblings().removeClass("hr");
+				$(".mian>div").eq($(this).index()).show().siblings().hide();
+			})
+			
+		})
+		
+		
+		
+		//下面为ajax获取NBA新闻内容
+		$(function() {
+			var url = "http://wangyi.butterfly.mopaasapp.com/news/api?type=sport&page=1&limit=30";
+			var data = {
+				size: 30,
+				page: 1,
+				limit: 30
+			};
+			$.ajax({
+				type: "post",
+				data: data,
+				url: url,
+				dataType: "json",
+				success: function(msg) {
+					var list = msg.list;
+					var rues = " ";
+					for(var i = 0; i < list.length; i++) {
+						rues += 
+						'<div class="pageOne">' +
+							'<div class="picture">' + '<img src=" ' + list[i].imgurl + ' " />' + '</div>' +
+
+							'<div class="right">' +
+							'<div class="news">' +
+									list[i].title +
+							'</div>' +
+							'<div class="date">' +
+							list[i].time +
+							'</div>' +
+						'</div>';
+					}
+					$('.mian').append(rues);
+					console.log(list);
+					console.log(msg);
+					console.log("获取数据成功");
+				},
+				Error: function(err) {
+					console.log(err);
+					console.log("获取数据失败")
+				}
+			})
+
+		})
+		
+		
+		//下面为ajax获取军事新闻内容
+		$(function() {
+			var url = "http://wangyi.butterfly.mopaasapp.com/news/api?type=war&page=1&limit=30";
+			var data = {
+				size: 30,
+				page: 1,
+				limit: 30
+			};
+			$.ajax({
+				type: "post",
+				data: data,
+				url: url,
+				dataType: "json",
+				success: function(msg) {
+					var list = msg.list;
+					var rues = " ";
+					for(var i = 0; i < list.length; i++) {
+						rues += 
+						'<div>' +
+							'<div class="picture">' + '<img src=" ' + list[i].imgurl + ' " />' + '</div>' +
+
+							'<div class="right">' +
+							'<div class="news">' +
+									list[i].title +
+							'</div>' +
+							'<div class="date">' +
+							list[i].time +
+							'</div>' +
+						'</div>';
+					}
+					$('.mian').append(rues);
+					console.log(list);
+					console.log(msg);
+					console.log("获取数据成功");
+				},
+				Error: function(err) {
+					console.log(err);
+					console.log("获取数据失败")
+				}
+			})
+
+		})
+		
+		//下面为ajax获取娱乐新闻内容
+		$(function() {
+			var url = "http://wangyi.butterfly.mopaasapp.com/news/api?type=ent&page=1&limit=30";
+			var data = {
+				size: 30,
+				page: 1,
+				limit: 30
+			};
+			$.ajax({
+				type: "post",
+				data: data,
+				url: url,
+				dataType: "json",
+				success: function(msg) {
+					var list = msg.list;
+					var rues = " ";
+					for(var i = 0; i < list.length; i++) {
+						rues += 
+						'<div>' +
+							'<div class="picture">' + '<img src=" ' + list[i].imgurl + ' " />' + '</div>' +
+
+							'<div class="right">' +
+							'<div class="news">' +
+									list[i].title +
+							'</div>' +
+							'<div class="date">' +
+							list[i].time +
+							'</div>' +
+						'</div>';
+					}
+					$('.mian').append(rues);
+					console.log(list);
+					console.log(msg);
+					console.log("获取数据成功");
+				},
+				Error: function(err) {
+					console.log(err);
+					console.log("获取数据失败")
+				}
+			})
+
+		})
+
+	</script>
+
+</html>
