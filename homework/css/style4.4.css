@@ -291,19 +291,18 @@ input[type^="text9"]{
 	margin-top: -13px;
 }
 .miantop_bottom{
-	width: 100%;
+	width: 1170px;
 	height: 272px;
-	position: relative;
+	margin: auto;
 	margin-top: -97px;
+	display: flex;
+	justify-content:space-between;
 }
 .one,.two,.three,.four,.five,.six{
-	display: inline-block;
-	vertical-align: top;
 	width: 203px;
 	height: 250px;
 	background: #eee;
 	margin-right: 22px;
-	margin-left: -8px;
 	color: #B7B4B4;
 }
 .miantop_bottom img{
@@ -387,32 +386,28 @@ input[type^="text9"]{
 }
 .mianbottom_bottom{
 	height: 143px;
-	width: 100%;
+	width:1170px;
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
 }
 .mianbottom_bottom p{
 	font-size: 14px;
 	margin-left: 20px;
 }
 .write15{
-	display: inline-block;
-	vertical-align: top;
 	width: 188px;
 	height: 143px;
 	background: #FCFCFC;
 	border-radius: 5px;
 }
 .write16{
-	display: inline-block;
-	vertical-align: top;
 	width: 475px;
 	height: 143px;
 	background: #FCFCFC;
 	border-radius: 5px;
-	
 }
 .write17{
-	display: inline-block;
-	vertical-align: top;
 	width: 475px;
 	height: 143px;
 	border-top:4px solid #1DD2AF;
@@ -420,8 +415,6 @@ input[type^="text9"]{
 	border-radius: 5px;
 }
 .write18{
-	display: inline-block;
-	vertical-align: top;
 	width: 188px;
 	height: 143px;
 	background: #FCFCFC;
