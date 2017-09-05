@@ -12,14 +12,11 @@ ul{
 .box{
 	width: 1295px;
 	margin: 100px auto;
-	border: 1px solid darkred;
 }
 .header{
 	width: 645px;
 	height: 73px;
-	margin: auto;
-	border: 1px solid indigo;
-		
+	margin: auto;	
 }
 .headerleft{
 	width: 151px;
