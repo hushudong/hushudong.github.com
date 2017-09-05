@@ -109,7 +109,7 @@ ul{
 #picture2{
 	width: 34px;
 	height: 37px;
-	vertical-align: middle;
+	vertical-align:middle;
 }
 
 .header_top a:hover{
@@ -117,74 +117,46 @@ ul{
 	background: #40A5F5;
 }
 .header_bottom{
-	width: 100%;
+	width: 80%;
 	height: 311px;
 	background: url(../img/3.jpg) no-repeat;
 	background-size:cover;
-	margin-left: 43px;
-	margin-left: 86px;
-	margin-top: 45px;
+	margin-left:15%;
+	margin-top: 40px;
 }
 .mian{
 	width: 100%;
 	background: #EAFAFC;
-	margin-top: 36px;
+	margin-top: -20px;
+	padding-top: 10px;
 }
 .mian P{
 	color: #6262F2;
 }
-.summary1{
-	width:500px;
-	height: 2740px;
-	background: url(../img/19.jpg);
-	display:inline-block;
-	background-size: cover;
-	vertical-align: top;
-	text-align: center;
-	border-radius: 40px;
-}
-.summary1 h2{
-	padding-left: 106px;
-	color: #085AF0;
-	margin-left: -135px;
-}
-.nav1{
-	width: 350px;
-	height: 350px;	
-}
-.nav1 a{
-	text-decoration: none;
-	color:#6262F2;
-	margin-left: 115px;
-	font-size: 19px;
-	font-weight: bolder;
-}
 .work1{
-	width:500px;
-	height: 2740px;
-	display:inline-block;
-	vertical-align: top;
-	margin-left: 192px;
-	background:url(../img/bg6.jpg); 
-	background-size: cover;
-	text-align: center;
-	border-radius: 40px;
+	width:1000px;
+	padding-bottom: 20px;
 }
 .work1 h2{
-	padding-left: 106px;
 	color: #085AF0;
-	margin-left: -135px;
 }
 .word1{
-	width: 350px;
-	height: 350px;	
+	width: 1000px;	
+	display: flex;
+	flex-wrap: wrap;
 }
-.word1 a{
+.word1 div{
+	width: 32%;
+	margin-top: 10px;
+}
+.word1 div>a{
 	text-decoration: none;
 	color:#6262F2;
-	margin-left: 115px;
 	font-size: 19px;
 	font-weight: bolder;
+}
+.word1 div>a:hover{
+	color: blue;
 }
 .bottom{
 	width: 100%;
@@ -206,7 +178,6 @@ ul{
 	margin-top: 16px;
 	margin-left: 53px;
 }
-
 
 
 
